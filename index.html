@@ -7,35 +7,90 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <style>
-      .image img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        border-radius: 10px;
-      }
+   
+       <style>
+  /* Main image styling */
+  .image img {
+    width: 100%;
+    height: auto; /* Adjust height automatically */
+    object-fit: contain; /* Show the full image */
+    border-radius: 10px;
+    max-height: 500px; /* Optional: limit height on large screens */
+  }
 
-      .posts article {
-        text-align: center;
-        margin-bottom: 2rem;
-        padding: 0 1rem;
-      }
+  /* Post articles */
+  .posts article {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
 
-      .posts h2, .posts p {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        font-size: clamp(1rem, 2.5vw, 1.4rem);
-      }
+  /* Headings and paragraphs */
+  .posts h2, .posts p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+  }
 
-      @media (max-width: 600px) {
-        .posts p {
-          font-size: 0.95rem;
-        }
-        .posts h2 {
-          font-size: 1.2rem;
-        }
-      }
-    </style>
+  /* Buttons */
+  .posts .button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #333; /* Original dark button color */
+    color: #fff; /* White text */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease;
+    white-space: normal;
+    word-wrap: break-word;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .posts .button:hover {
+    background-color: #555; /* Slightly lighter on hover */
+  }
+
+  /* Responsive for tablets */
+  @media (max-width: 1024px) {
+    .posts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .posts article {
+      width: 90%;
+    }
+  }
+
+  /* Responsive for phones */
+  @media (max-width: 600px) {
+    .posts p {
+      font-size: 0.95rem;
+    }
+    .posts h2 {
+      font-size: 1.2rem;
+    }
+
+    .posts .button {
+      font-size: 0.85rem;
+      padding: 10px 15px;
+    }
+
+    /* Adjust main image for phones */
+    .image img {
+      max-height: 300px; /* Optional: reduce height for small screens */
+    }
+  }
+</style>
+
   </head>
   <body class="is-preload">
     <div id="wrapper" class="fade-in">
