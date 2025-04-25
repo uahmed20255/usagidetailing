@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="assets/css/main.css">
     
     
-<style>
+
+ <style>
     /* Container for the service items */
     .service-details ul {
         display: grid;
@@ -38,16 +39,21 @@
     .service-details .button {
         display: inline-block;
         margin-top: 15px;
-        padding: 12px 24px;
+        padding: 12px 20px;
         background-color: #333;
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
-        font-size: 1rem;
+        font-size: 0.95rem;
         text-align: center;
-        text-transform: uppercase; /* Make button text uppercase */
+        text-transform: uppercase;
         font-weight: bold;
+        letter-spacing: 0.5px;
         transition: background-color 0.3s ease;
+        white-space: normal; /* Allow text to wrap */
+        word-wrap: break-word; /* Break long words if needed */
+        max-width: 100%; /* Prevent button from overflowing container */
+        box-sizing: border-box; /* Include padding in width */
     }
 
     .service-details .button:hover {
@@ -74,8 +80,8 @@
         }
 
         .service-details .button {
-            padding: 10px 15px; /* Slightly smaller buttons on mobile */
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Slightly smaller font on small screens */
+            padding: 10px 15px; /* Adjust padding */
         }
     }
 </style>
