@@ -43,6 +43,15 @@
         .service-details .button:hover {
             background-color: #555;
         }
+
+         @media (max-width: 768px) {
+    .service-details ul {
+        grid-template-columns: 1fr; /* Make columns stack on mobile */
+    }
+    .service-details ul li img {
+        height: auto; /* Keep images responsive */
+    }
+}
     </style>
 </head>
 <body class="is-preload">
