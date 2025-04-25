@@ -35,10 +35,9 @@
         box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
     }
 
-    /* Style for the buttons inside service items */
     .service-details .button {
-        display: inline-block;
-        margin-top: 15px;
+        display: block;
+        width: 100%;
         padding: 12px 20px;
         background-color: #333;
         color: #fff;
@@ -50,11 +49,12 @@
         font-weight: bold;
         letter-spacing: 0.5px;
         transition: background-color 0.3s ease;
-        white-space: normal; /* Allow text to wrap */
+        white-space: normal;
         word-wrap: break-word;
-        max-width: 100%; /* Prevent button from overflowing */
         box-sizing: border-box;
     }
+
+    
 
     .service-details .button:hover {
         background-color: #555;
