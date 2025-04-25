@@ -1,12 +1,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Basic Full Detailing Package - Usagi Detailing</title>
+    <title>Basic Detailing Package - Usagi Detailing</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Container for the service items */
+        /* Service details grid */
         .service-details ul {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -14,7 +16,6 @@
             margin: 20px 0;
         }
 
-        /* Style each service box */
         .service-details ul li {
             background-color: #f4f4f4;
             padding: 20px;
@@ -23,25 +24,26 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Hover effect for the service boxes */
         .service-details ul li:hover {
-            transform: translateY(-10px); /* Move the box up when hovering */
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* Style for the buttons inside service items */
-        .service-details .button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+        /* Posts section (before/after images) */
+        .posts article img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .service-details .button:hover {
-            background-color: #555;
+        /* Responsive adjustments */
+        @media (max-width: 700px) {
+            .service-details ul {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -111,19 +113,18 @@
             <section class="posts">
                 <article>
                     <h2>Before: Basic Cleaning</h2>
-                    <img src="images/beforeint.png" alt="Before Basic Cleaning">
+                    <img src="images/beforeint.png" alt="Before interior cleaning: dust and debris on seats and floors">
                     <p>Customer's interior hadn’t been cleaned in months. They chose the Basic Package to get the job done.</p>
                 </article>
 
                 <article>
                     <h2>After: Basic Cleaning</h2>
-                    <img src="images/afterint.png" alt="After Basic Cleaning">
+                    <img src="images/afterint.png" alt="After interior cleaning: seats and floors looking spotless">
                     <p>Interior looking as brand-new.</p>
                 </article>
-                <!-- Add more articles for additional images if necessary -->
             </section>
 
-        </div> <!-- End of Main -->
+        </div>
 
         <!-- Footer -->
         <footer id="footer">
@@ -143,7 +144,6 @@
             </section>
         </footer>
 
-        <!-- Copyright -->
         <div id="copyright">
             <ul><li>&copy; Usagi Detailing Inc.</li></ul>
         </div>
@@ -161,4 +161,3 @@
 
 </body>
 </html>
-
