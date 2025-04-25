@@ -8,7 +8,7 @@
     
     
 
- <style>
+<style>
     /* Container for the service items */
     .service-details ul {
         display: grid;
@@ -44,16 +44,16 @@
         color: #fff;
         text-decoration: none;
         border-radius: 5px;
-        font-size: 0.95rem;
+        font-size: 1rem;
         text-align: center;
         text-transform: uppercase;
         font-weight: bold;
         letter-spacing: 0.5px;
         transition: background-color 0.3s ease;
         white-space: normal; /* Allow text to wrap */
-        word-wrap: break-word; /* Break long words if needed */
-        max-width: 100%; /* Prevent button from overflowing container */
-        box-sizing: border-box; /* Include padding in width */
+        word-wrap: break-word;
+        max-width: 100%; /* Prevent button from overflowing */
+        box-sizing: border-box;
     }
 
     .service-details .button:hover {
@@ -62,31 +62,31 @@
 
     /* Center-align button container */
     .service-details ul li div {
-        margin-top: auto; /* Push button container to the bottom */
+        margin-top: auto; /* Push button to the bottom */
         display: flex;
         justify-content: center; /* Center the button horizontally */
+        align-items: center;
     }
 
-    /* Responsive adjustments for mobile devices */
-    @media (max-width: 768px) {
+    /* Responsive adjustments for tablets and phones */
+    @media (max-width: 1024px) {
         .service-details ul {
-            grid-template-columns: 1fr; /* Stack service boxes vertically */
+            grid-template-columns: 1fr; /* Stack boxes vertically on tablets and phones */
         }
+    }
 
-        .service-details ul li img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
+    @media (max-width: 600px) {
+        .service-details ul li {
+            padding: 15px; /* Slightly less padding on small screens */
         }
 
         .service-details .button {
-            font-size: 0.85rem; /* Slightly smaller font on small screens */
-            padding: 10px 15px; /* Adjust padding */
+            font-size: 0.9rem; /* Smaller font on phones */
+            padding: 10px 15px; /* Smaller padding */
         }
     }
 </style>
 
-    
       
 
 
