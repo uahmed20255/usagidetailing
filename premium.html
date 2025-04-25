@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usagi Detailing - Premium Package</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
-    
-
 <style>
     /* Container for the service items */
     .service-details ul {
@@ -17,7 +17,6 @@
         margin: 20px 0;
     }
 
-    /* Style each service box */
     .service-details ul li {
         background-color: #f4f4f4;
         padding: 20px;
@@ -29,15 +28,16 @@
         justify-content: space-between;
     }
 
-    /* Hover effect for the service boxes */
     .service-details ul li:hover {
-        transform: translateY(-10px); /* Move the box up when hovering */
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Add a stronger shadow on hover */
+        transform: translateY(-10px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
     }
 
+    /* Button style fix */
     .service-details .button {
         display: block;
         width: 100%;
+        margin-top: 15px;
         padding: 12px 20px;
         background-color: #333;
         color: #fff;
@@ -54,169 +54,149 @@
         box-sizing: border-box;
     }
 
-    
-
     .service-details .button:hover {
         background-color: #555;
     }
 
-    /* Center-align button container */
-    .service-details ul li div {
-        margin-top: auto; /* Push button to the bottom */
-        display: flex;
-        justify-content: center; /* Center the button horizontally */
-        align-items: center;
-    }
-
-    /* Responsive adjustments for tablets and phones */
     @media (max-width: 1024px) {
         .service-details ul {
-            grid-template-columns: 1fr; /* Stack boxes vertically on tablets and phones */
+            grid-template-columns: 1fr;
         }
     }
 
     @media (max-width: 600px) {
         .service-details ul li {
-            padding: 15px; /* Slightly less padding on small screens */
+            padding: 15px;
         }
 
         .service-details .button {
-            font-size: 0.9rem; /* Smaller font on phones */
-            padding: 10px 15px; /* Smaller padding */
+            font-size: 0.9rem;
+            padding: 10px 15px;
         }
     }
+
+    .posts article img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+        aspect-ratio: 4/3;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 </style>
-
-      
-
-
 </head>
+
 <body class="is-preload">
 
-    <!-- Wrapper -->
-    <div id="wrapper" class="premium-page">
+<div id="wrapper" class="premium-page">
 
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo">Usagi Detailing</a>
-        </header>
+    <header id="header">
+        <a href="index.html" class="logo">Usagi Detailing</a>
+    </header>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="links">
-                <li><a href="index.html">About Us</a></li>
-                <li><a href="generic.html">Gallery</a></li>
-                <li><a href="elements.html">Contact Us</a></li>
-                <li><a href="basic.html">Basic Package</a></li>
-                <li><a href="full.html">Full Package</a></li>
-                <li class="active"><a href="premium.html">Premium Package</a></li>
-                <li><a href="extra.html">Ceramic Coating</a></li>
-                <li><a href="lights.html">Headlight Restoration</a></li>
-            </ul>
-            <ul class="icons">
-                <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="icon brands fa-google"><span class="label">Google Form</span></a></li>
-            </ul>
-        </nav>
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="generic.html">Gallery</a></li>
+            <li><a href="elements.html">Contact Us</a></li>
+            <li><a href="basic.html">Basic Package</a></li>
+            <li><a href="full.html">Full Package</a></li>
+            <li class="active"><a href="premium.html">Premium Package</a></li>
+            <li><a href="extra.html">Ceramic Coating</a></li>
+            <li><a href="lights.html">Headlight Restoration</a></li>
+        </ul>
+        <ul class="icons">
+            <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="icon brands fa-google"><span class="label">Google Form</span></a></li>
+        </ul>
+    </nav>
 
-        <!-- Main -->
-        <div id="main">
-            <!-- Premium Package Description -->
-            <section class="post">
-                <header class="major">
-                    <h1>Premium Detailing Package: </h1>
-                    <p class="subtitle"><em>The Ultimate Care for Your Vehicle</em></p>
-                    <p>Our Premium Detailing Package is the most comprehensive service we offer, designed to provide a complete restoration for your vehicle. This package includes all the services from the Full Detailing Package, plus additional high-end treatments that ensure your car looks and feels brand new.</p>
-                </header>
+    <div id="main">
+        <section class="post">
+            <header class="major">
+                <h1>Premium Detailing Package: </h1>
+                <p class="subtitle"><em>The Ultimate Care for Your Vehicle</em></p>
+                <p>Our Premium Detailing Package is the most comprehensive service we offer, designed to provide a complete restoration for your vehicle. This package includes all the services from the Full Detailing Package, plus additional high-end treatments that ensure your car looks and feels brand new.</p>
+            </header>
 
-                <div class="service-details">
-                    <h2>What’s Included:</h2>
-                    <ul>
-                        <li><strong>Exterior Wash & Dry:</strong> A complete hand wash followed by a hand dry to remove dirt, grime, and contaminants, leaving your car spotless.
-                    
-                            <div><a href="light.html" class="button" style="color: #fff !important;">Click here to learn More About Paint Correction</a></div>
-                        
-
-                        </li>
-                        <li><strong>Ceramic Coating:</strong> Advanced protection for your car’s exterior with a ceramic coating that offers long-lasting shine, durability, and resistance to environmental contaminants.
-                            <div><a href="extra.html" class="button" style="color: #fff !important;">Click Learn More About Ceramic Coating</a></div>
-                        
-                        </li>
-                        <li><strong>Interior Steam Cleaning:</strong> Deep steam cleaning to remove dirt, bacteria, and stains from upholstery, carpets, and mats, leaving your car’s interior spotless and sanitized.</li>
-                        <li><strong>Interior Vacuuming:</strong> Full vacuuming of all seats, carpets, floor mats, and other areas.</li>
-                        <li><strong>Dashboard & Console Cleaning:</strong> Detailed cleaning and restoration of your dashboard, console, and all hard surfaces.</li>
-                        <li><strong>Leather & Fabric Treatment:</strong> We clean, condition, and protect both leather and fabric seats, ensuring they stay fresh and comfortable.</li>
-                        <li><strong>Pet Hair Removal:</strong> Special attention to removing stubborn pet hair from all seats, carpets, and upholstery.</li>
-                        <li><strong>Plastic Shine Treatment:</strong> We restore the shine to all plastic surfaces inside your vehicle, including mats, trim, and faded plastic or rubber parts, giving them a like-new appearance.</li>
-                        <li><strong>Window & Mirror Cleaning:</strong> Comprehensive cleaning of your car’s windows and mirrors, leaving a streak-free finish.</li>
-                        <li><strong>Air Freshener:</strong> We leave your car smelling fresh with a scent of your choice.</li>
-                    </ul>
-
-                    <h2>Starting Prices:</h2>
-                    <ul>
-                        <li><strong>Sedans:</strong> Starting at $300</li>
-                        <li><strong>SUVs/Trucks:</strong> Starting at $400</li>
-                    </ul>
-
-                    <h2>Why Choose the Premium Detailing Package?</h2>
-                    <p>The Premium Detailing Package is the ultimate choice for those who want to give their car the best possible care. Whether you’re looking to restore your car’s paint, protect its exterior with advanced coatings, or ensure your interior is deep-cleaned and sanitized, this package covers all bases. With services like paint correction, ceramic coating, plastic shine treatment, and interior steam cleaning, your vehicle will look and feel brand new inside and out.</p>
-                    <p>For those who want the highest level of care, this is the service for you.</p>
-                </div>
-            </section>
-
-            <!-- Before and After Section -->
-            <section class="posts">
-                <article>
-                    <h2>Before: Premium Cleaning 1</h2>
-                    <img src="images/beforetire.png" alt="Before Premium Cleaning 1">
-                    <p>Filthy wheels before being iron decontaminated</p>
-                </article>
-
-                <article>
-                    <h2>After: Premium Cleaning 1</h2>
-                    <img src="images/aftertire.png" alt="After Premium Cleaning 1">
-                    <p>Wheels as good as brand new!</p>
-                </article>
-
-               
-            </section>
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <section>
-                <h3>Phone</h3>
-                <p><a href="#">(443) 272-9723</a></p>
-            </section>
-            <section>
-                <h3>Email</h3>
-                <p><a href="#">uahmed20255@gmail.com</a></p>
-            </section>
-            <section>
-                <h3>Social</h3>
-                <ul class="icons alt">
-                    <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-                    <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            <div class="service-details">
+                <h2>What’s Included:</h2>
+                <ul>
+                    <li>
+                        <strong>Exterior Wash & Dry:</strong> A complete hand wash followed by a hand dry to remove dirt, grime, and contaminants, leaving your car spotless.
+                        <a href="light.html" class="button">Learn About Paint Correction</a>
+                    </li>
+                    <li>
+                        <strong>Ceramic Coating:</strong> Advanced protection for your car’s exterior with a ceramic coating that offers long-lasting shine, durability, and resistance to environmental contaminants.
+                        <a href="extra.html" class="button">Learn About Ceramic Coating</a>
+                    </li>
+                    <li><strong>Interior Steam Cleaning:</strong> Deep steam cleaning to remove dirt, bacteria, and stains from upholstery, carpets, and mats, leaving your car’s interior spotless and sanitized.</li>
+                    <li><strong>Interior Vacuuming:</strong> Full vacuuming of all seats, carpets, floor mats, and other areas.</li>
+                    <li><strong>Dashboard & Console Cleaning:</strong> Detailed cleaning and restoration of your dashboard, console, and all hard surfaces.</li>
+                    <li><strong>Leather & Fabric Treatment:</strong> We clean, condition, and protect both leather and fabric seats, ensuring they stay fresh and comfortable.</li>
+                    <li><strong>Pet Hair Removal:</strong> Special attention to removing stubborn pet hair from all seats, carpets, and upholstery.</li>
+                    <li><strong>Plastic Shine Treatment:</strong> We restore the shine to all plastic surfaces inside your vehicle, including mats, trim, and faded plastic or rubber parts, giving them a like-new appearance.</li>
+                    <li><strong>Window & Mirror Cleaning:</strong> Comprehensive cleaning of your car’s windows and mirrors, leaving a streak-free finish.</li>
+                    <li><strong>Air Freshener:</strong> We leave your car smelling fresh with a scent of your choice.</li>
                 </ul>
-            </section>
-        </footer>
 
-        <!-- Copyright -->
-        <div id="copyright">
-            <ul><li>&copy; Usagi Detailing Inc.</li></ul>
-        </div>
+                <h2>Starting Prices:</h2>
+                <ul>
+                    <li><strong>Sedans:</strong> Starting at $300</li>
+                    <li><strong>SUVs/Trucks:</strong> Starting at $400</li>
+                </ul>
 
+                <h2>Why Choose the Premium Detailing Package?</h2>
+                <p>The Premium Detailing Package is the ultimate choice for those who want to give their car the best possible care. Whether you’re looking to restore your car’s paint, protect its exterior with advanced coatings, or ensure your interior is deep-cleaned and sanitized, this package covers all bases. With services like paint correction, ceramic coating, plastic shine treatment, and interior steam cleaning, your vehicle will look and feel brand new inside and out.</p>
+            </div>
+        </section>
+
+        <section class="posts">
+            <article>
+                <h2>Before: Premium Cleaning 1</h2>
+                <img src="images/beforetire.png" alt="Before Premium Cleaning 1: Dirty wheels before decontamination">
+                <p>Filthy wheels before being iron decontaminated.</p>
+            </article>
+
+            <article>
+                <h2>After: Premium Cleaning 1</h2>
+                <img src="images/aftertire.png" alt="After Premium Cleaning 1: Clean, shiny wheels after detailing">
+                <p>Wheels as good as brand new!</p>
+            </article>
+        </section>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <footer id="footer">
+        <section>
+            <h3>Phone</h3>
+            <p><a href="#">(443) 272-9723</a></p>
+        </section>
+        <section>
+            <h3>Email</h3>
+            <p><a href="#">uahmed20255@gmail.com</a></p>
+        </section>
+        <section>
+            <h3>Social</h3>
+            <ul class="icons alt">
+                <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+            </ul>
+        </section>
+    </footer>
+
+    <div id="copyright">
+        <ul><li>&copy; Usagi Detailing Inc.</li></ul>
+    </div>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 </html>
-
