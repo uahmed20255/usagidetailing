@@ -1,103 +1,172 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usagi Detailing - Responsive Navbar</title>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Full Detailing Package - Usagi Detailing</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <style>
-        /* Base nav styles */
-        #nav {
-            background: #333;
+        /* Service grid container */
+        .service-details ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+            gap: 20px;
+            margin: 20px 0;
         }
 
-        #nav ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            list-style: none;
-            margin: 0;
-            padding: 10px;
+        .service-details ul li {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        #nav ul li {
-            margin: 0 15px;
+        .service-details ul li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
 
-        #nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* Hamburger styles */
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            margin-left: 20px;
-        }
-
-        .nav-toggle span {
-            background: #fff;
-            height: 3px;
-            width: 25px;
-            margin: 4px 0;
-            border-radius: 2px;
-        }
-
-        /* Responsive menu */
-        @media (max-width: 768px) {
-            #nav ul.links {
-                display: none;
-                flex-direction: column;
-                background: #333;
-                width: 100%;
-                text-align: center;
+        /* Responsive media queries */
+        @media (max-width: 1024px) {
+            .service-details ul {
+                grid-template-columns: 1fr; /* One column on tablets and smaller devices */
             }
+        }
 
-            #nav ul.links.showing {
-                display: flex;
+        @media (max-width: 600px) {
+            .service-details ul li {
+                padding: 15px; /* Slightly less padding on phones */
+                font-size: 0.95rem; /* Smaller font on phones */
             }
+        }
 
-            .nav-toggle {
-                display: flex;
-                padding: 10px;
-            }
+        /* Image responsiveness (before/after) */
+        .posts article img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
-<body>
+<body class="is-preload">
 
-    <!-- Nav -->
-    <nav id="nav">
-        <div class="nav-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
+    <!-- Wrapper -->
+    <div id="wrapper" class="full-page">
+
+        <!-- Header -->
+        <header id="header">
+            <a href="index.html" class="logo">Usagi Detailing</a>
+        </header>
+
+        <!-- Nav -->
+        <nav id="nav">
+            <ul class="links">
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="generic.html">Gallery</a></li>
+                <li><a href="elements.html">Contact Us</a></li>
+                <li><a href="basic.html">Basic Package</a></li>
+                <li class="active"><a href="full.html">Full Package</a></li>
+                <li><a href="premium.html">Premium Package</a></li>
+                <li><a href="extra.html">Ceramic Coating</a></li>
+                <li><a href="lights.html">Headlight Restoration</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="icon brands fa-google"><span class="label">Google Form</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <div id="main">
+
+            <!-- Full Detailing Package Section -->
+            <section class="post">
+                <header class="major">
+                    <h1>Full Detailing Package</h1>
+                    <p class="subtitle"><em>Comprehensive Care for Your Vehicle</em></p>
+                    <p>Our Full Detailing Package is designed for customers who want a deeper, more thorough cleaning of both the interior and exterior of their vehicle. This package offers everything in our Basic Detailing Package, along with additional services that restore and enhance your car’s appearance inside and out.</p>
+                </header>
+
+                <div class="service-details">
+                    <h2>What’s Included:</h2>
+                    <ul>
+                        <li><strong>Exterior Wash & Dry:</strong> A complete hand wash to remove dirt, grime, and road contaminants, followed by a careful dry to prevent water spots.</li>
+                        <li><strong>Tire & Wheel Cleaning:</strong> Thorough cleaning of your tires and wheels, removing brake dust, grime, and leaving a polished shine.</li>
+                        <li><strong>Clay Bar Treatment:</strong> A special treatment to remove embedded contaminants from the paint, leaving it smooth and glossy.</li>
+                        <li><strong>Steam Cleaning:</strong> Deep steam cleaning of your car’s interior to remove dirt, stains, and bacteria from upholstery, carpets, and mats, leaving the interior sanitized.</li>
+                        <li><strong>Interior Vacuuming:</strong> Full vacuuming of all carpets, seats, and floor mats to remove debris, dust, and dirt.</li>
+                        <li><strong>Dashboard & Console Cleaning:</strong> We clean and polish your dashboard, console, and other surfaces, removing fingerprints and restoring shine.</li>
+                        <li><strong>Window & Mirror Cleaning:</strong> Cleaning of all windows and mirrors for a streak-free, clear view.</li>
+                        <li><strong>Interior Fabric/Leather Cleaning:</strong> We clean and treat your car’s fabric or leather seats, making them look fresh and comfortable.</li>
+                        <li><strong>Pet Hair Removal:</strong> Special attention to removing pet hair from your car’s seats, carpets, and upholstery, leaving your interior spotless.</li>
+                        <li><strong>Air Freshener:</strong> We leave your car smelling fresh with an air freshener of your choice.</li>
+                    </ul>
+
+                    <h2>Starting Prices:</h2>
+                    <ul>
+                        <li><strong>Sedans:</strong> Starting at $150</li>
+                        <li><strong>SUVs/Trucks:</strong> Starting at $200</li>
+                    </ul>
+
+                    <h2>Why Choose the Full Detailing Package?</h2>
+                    <p>The Full Detailing Package is the ideal choice for those who want a complete, deep clean. It covers both interior and exterior, restoring your car’s shine and cleanliness with added services. Whether you need a thorough cleaning for your daily vehicle or preparation for a special event, this package ensures your car looks and feels its best.</p>
+                </div>
+            </section>
+
+            <!-- Before and After Section -->
+            <section class="posts">
+                <article>
+                    <h2>Before: Full Cleaning</h2>
+                    <img src="images/beforefull.png" alt="Before Full Cleaning">
+                    <p>Customer’s vehicle needed a deep clean for a special event. The Full Package was chosen to ensure every detail was perfect.</p>
+                </article>
+
+                <article>
+                    <h2>After: Full Cleaning</h2>
+                    <img src="images/afterfull.png" alt="After Full Cleaning">
+                    <p>Vehicle looks brand-new, inside and out. The Full Detailing Package worked wonders.</p>
+                </article>
+            </section>
+
         </div>
-        <ul class="links">
-            <li><a href="index.html">About Us</a></li>
-            <li><a href="generic.html">Gallery</a></li>
-            <li><a href="elements.html">Contact Us</a></li>
-            <li><a href="basic.html">Basic Package</a></li>
-            <li><a href="full.html">Full Package</a></li>
-            <li><a href="premium.html">Premium Package</a></li>
-            <li><a href="extra.html">Ceramic Coating</a></li>
-            <li><a href="lights.html">Headlight Restoration</a></li>
-            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="icon brands fa-google"><span class="label">Google Form</span></a></li>
-            <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        </ul>
-    </nav>
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('#nav ul.links');
-            navLinks.classList.toggle('showing');
-        }
-    </script>
+        <!-- Footer -->
+        <footer id="footer">
+            <section>
+                <h3>Phone</h3>
+                <p><a href="#">(443) 272-9723</a></p>
+            </section>
+            <section>
+                <h3>Email</h3>
+                <p><a href="#">uahmed20255@gmail.com</a></p>
+            </section>
+            <section>
+                <h3>Social</h3>
+                <ul class="icons alt">
+                    <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                    <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                </ul>
+            </section>
+        </footer>
+
+        <div id="copyright">
+            <ul><li>&copy; Usagi Detailing Inc.</li></ul>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
-
