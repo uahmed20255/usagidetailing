@@ -6,10 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
+        /* Navbar adjustments */
+        #nav ul.links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            background: #333;
+        }
+
+        #nav ul.links li {
+            margin: 10px 15px;
+        }
+
+        #nav ul.links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 500px) {
+            #nav ul.links li a {
+                font-size: 0.9rem;
+            }
+        }
+
         /* Service grid container */
         .service-details ul {
             display: grid;
-            grid-template-columns: 1fr 1fr; /* Two columns on larger screens */
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin: 20px 0;
         }
@@ -27,17 +56,16 @@
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
 
-        /* Responsive media queries */
         @media (max-width: 1024px) {
             .service-details ul {
-                grid-template-columns: 1fr; /* One column on tablets and smaller devices */
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 600px) {
             .service-details ul li {
-                padding: 15px; /* Slightly less padding on phones */
-                font-size: 0.95rem; /* Smaller font on phones */
+                padding: 15px;
+                font-size: 0.95rem;
             }
         }
 
@@ -73,10 +101,8 @@
                 <li><a href="premium.html">Premium Package</a></li>
                 <li><a href="extra.html">Ceramic Coating</a></li>
                 <li><a href="lights.html">Headlight Restoration</a></li>
-            </ul>
-            <ul class="icons">
-                <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="icon brands fa-google"><span class="label">Google Form</span></a></li>
+                <li><a href="https://www.instagram.com/usagidetailing/">Instagram</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform">Google Form</a></li>
             </ul>
         </nav>
 
