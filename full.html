@@ -49,7 +49,7 @@
 
         /* Responsive menu */
         @media (max-width: 768px) {
-            #nav ul {
+            #nav ul.links {
                 display: none;
                 flex-direction: column;
                 background: #333;
@@ -57,7 +57,7 @@
                 text-align: center;
             }
 
-            #nav ul.showing {
+            #nav ul.links.showing {
                 display: flex;
             }
 
@@ -93,10 +93,11 @@
 
     <script>
         function toggleMenu() {
-            const navLinks = document.querySelector('#nav ul');
+            const navLinks = document.querySelector('#nav ul.links');
             navLinks.classList.toggle('showing');
         }
     </script>
 
 </body>
 </html>
+
