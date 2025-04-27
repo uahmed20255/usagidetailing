@@ -3,51 +3,119 @@
 <head>
     <title>Gallery - Usagi Detailing</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
+            color: #fff;
+        }
+        header, nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1em;
+            flex-wrap: wrap;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5em;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #ffa500;
+        }
+        .intro {
+            text-align: center;
+            padding: 4em 1em 2em;
+        }
+        .intro h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .intro .highlight {
+            color: #ffc107;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 2em;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
         .gallery img {
             width: 100%;
-            aspect-ratio: 4 / 3; /* Maintain consistent ratio */
+            aspect-ratio: 4 / 3;
             object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
         .gallery img:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
         }
-
-        @media (max-width: 600px) {
-            .gallery {
-                grid-template-columns: 1fr;
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2em;
+            padding: 2em;
+            background: #0a0a0a;
+            color: #ccc;
+        }
+        footer section h3 {
+            color: #ffc107;
+        }
+        footer a {
+            color: #ffa500;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .intro h1 {
+                font-size: 2.2rem;
+            }
+            nav ul {
+                gap: 1em;
+                justify-content: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .intro h1 {
+                font-size: 1.8rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
-<body class="is-preload">
+<body>
+    <section class="intro">
+        <h1>USAGI<br>DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
+        <p>Check out our gallery of recent details!</p>
+    </section>
 
-    <!-- Wrapper -->
-    <div id="wrapper" class="fade-in">
-
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo">USAGI DETAILING</a>
-        </header>
-
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="links">
+    <header>
+        <nav>
+            <ul>
                 <li><a href="index.html">About Us</a></li>
                 <li class="active"><a href="generic.html">Gallery</a></li>
                 <li><a href="elements.html">Contact Us</a></li>
@@ -57,57 +125,34 @@
                 <li><a href="extra.html">Ceramic Coating</a></li>
                 <li><a href="lights.html">Headlight Restoration</a></li>
             </ul>
-            <ul class="icons">
-                <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="icon brands fa-google"><span class="label">Google Form</span></a></li>
-            </ul>
         </nav>
+    </header>
 
-        <!-- Main Gallery -->
-        <div id="main">
-            <section class="gallery">
-                <img src="images/IMG_1356.jpg" alt="Interior detailing">
-                <img src="images/IMG_1357.jpg" alt="Sedan exterior clean">
-                <img src="images/IMG_1358.jpg" alt="Tire and wheel close-up">
-                <img src="images/IMG_1359.jpg" alt="Blue BMW exterior">
-                <img src="images/IMG_1361.jpg" alt="Foam wash on BMW">
-                <img src="images/IMG_1363.jpg" alt="SUV foam wash">
-                <img src="images/IMG_1364.jpg" alt="Red minivan cleaning">
-                <img src="images/IMG_1360.jpg" alt="Foamy wheel close-up">
-                <img src="images/afterint.png" alt="Foamy wheel close-up">
-              
-            </section>
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <section>
-                <h3>Phone</h3>
-                <p><a href="#">(443) 272-9723</a></p>
-            </section>
-            <section>
-                <h3>Email</h3>
-                <p><a href="#">uahmed20255@gmail.com</a></p>
-            </section>
-            <section>
-                <h3>Social</h3>
-                <ul class="icons alt">
-                    <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-                    <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-                </ul>
-            </section>
-        </footer>
-
+    <div class="gallery">
+        <img src="images/IMG_1356.jpg" alt="Interior detailing">
+        <img src="images/IMG_1357.jpg" alt="Sedan exterior clean">
+        <img src="images/IMG_1358.jpg" alt="Tire and wheel close-up">
+        <img src="images/IMG_1359.jpg" alt="Blue BMW exterior">
+        <img src="images/IMG_1361.jpg" alt="Foam wash on BMW">
+        <img src="images/IMG_1363.jpg" alt="SUV foam wash">
+        <img src="images/IMG_1364.jpg" alt="Red minivan cleaning">
+        <img src="images/IMG_1360.jpg" alt="Foamy wheel close-up">
+        <img src="images/afterint.png" alt="Interior finish">
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
+    <footer>
+        <section>
+            <h3>Phone</h3>
+            <p><a href="tel:+14432729723">(443) 272-9723</a></p>
+        </section>
+        <section>
+            <h3>Email</h3>
+            <p><a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
+        </section>
+        <section>
+            <h3>Social</h3>
+            <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
+        </section>
+    </footer>
 </body>
 </html>
