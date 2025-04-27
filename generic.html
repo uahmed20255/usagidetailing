@@ -11,19 +11,16 @@
             background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
             color: #fff;
         }
-        header, nav {
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
             padding: 1em;
-            flex-wrap: wrap;
         }
         nav ul {
             list-style: none;
             display: flex;
             gap: 1.5em;
             padding: 0;
-            margin: 0;
         }
         nav ul li a {
             color: #fff;
@@ -34,143 +31,112 @@
         nav ul li a:hover {
             color: #ffa500;
         }
-        .intro {
+        .title-section {
             text-align: center;
-            padding: 3em 1em;
+            padding: 3em 1em 2em;
+            max-width: 100%;
+            margin: 0 auto;
         }
-        .intro h1 {
+        .title-section h1 {
+            display: inline-block;
             font-size: 2.5rem;
             margin: 0;
+            border-bottom: 3px solid #ffa500;
+            padding-bottom: 0.3em;
         }
-        .intro .highlight {
-            color: #ffc107;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-        .service-details {
-            max-width: 1000px;
+        .info-section {
+            max-width: 900px;
             margin: 2em auto;
             padding: 2em;
-            background: #1a1a1a;
+            background: #111;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
-        .service-details h2 {
+        .info-section h2 {
             color: #ffa500;
             margin-top: 1em;
         }
-        .service-details ul {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 0;
+        .info-section ul {
             list-style: none;
+            padding: 0;
         }
-        .service-details ul li {
-            background-color: #000;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .info-section ul li {
+            background: #222;
+            margin: 0.5em 0;
+            padding: 1em;
+            border-radius: 5px;
         }
-        .service-details ul li:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
-        }
-        .posts {
+        .before-after {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2em;
-            padding: 2em;
+            max-width: 1000px;
+            margin: 3em auto;
+            padding: 0 2em;
         }
-        .posts article {
-            background: #1a1a1a;
-            padding: 1em;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-        }
-        .posts article img {
+        .before-after img {
             width: 100%;
-            height: auto;
             border-radius: 10px;
-            object-fit: cover;
-            aspect-ratio: 4/3;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
-        footer {
-            background: #111;
+        .before-after h3 {
             text-align: center;
-            padding: 2em 1em;
+            margin-top: 0.5em;
         }
-        footer h3 {
-            color: #ffa500;
-        }
-        @media (max-width: 700px) {
-            .service-details ul {
-                grid-template-columns: 1fr;
+        @media (max-width: 600px) {
+            .title-section h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-
-<header>
-    <div class="intro">
-        <h1>USAGI DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
-    </div>
     <nav>
         <ul>
             <li><a href="index.html">About Us</a></li>
             <li><a href="generic.html">Gallery</a></li>
             <li><a href="elements.html">Contact Us</a></li>
-            <li><a href="basic.html">Basic Package</a></li>
+            <li class="active"><a href="basic.html">Basic Package</a></li>
             <li><a href="full.html">Full Package</a></li>
             <li><a href="premium.html">Premium Package</a></li>
             <li><a href="extra.html">Ceramic Coating</a></li>
             <li><a href="lights.html">Headlight Restoration</a></li>
         </ul>
     </nav>
-</header>
 
-<section class="service-details">
-    <h2>Basic Detailing Package</h2>
-    <p>Our Basic Detailing Package provides essential cleaning and care for both the interior and exterior of your vehicle. Perfect for regular maintenance to keep your car looking fresh and well-maintained.</p>
+    <section class="title-section">
+        <h1>Basic Detailing Package</h1>
+    </section>
 
-    <h2>What’s Included:</h2>
-    <ul>
-        <li><strong>Exterior Wash & Dry:</strong> Hand wash and dry to remove dirt and grime.</li>
-        <li><strong>Tire & Wheel Cleaning:</strong> Shine and clean tires and wheels.</li>
-        <li><strong>Steam Cleaning:</strong> Sanitize upholstery, carpets, and mats.</li>
-        <li><strong>Interior Vacuuming:</strong> Vacuum seats, carpets, and mats.</li>
-        <li><strong>Dashboard & Console Cleaning:</strong> Wipe down and polish hard surfaces.</li>
-        <li><strong>Window & Mirror Cleaning:</strong> Crystal-clear glass cleaning.</li>
-    </ul>
+    <section class="info-section">
+        <p>Our Basic Detailing Package is perfect for those who want to keep their vehicle clean and well-maintained without the need for an extensive service. This package covers both interior and exterior detailing, providing a comprehensive cleaning to refresh your car’s appearance.</p>
+        <h2>What’s Included:</h2>
+        <ul>
+            <li><strong>Exterior Wash & Dry:</strong> Hand wash to remove dirt and grime, followed by a hand dry.</li>
+            <li><strong>Tire & Wheel Cleaning:</strong> Cleaning and shining your tires and wheels.</li>
+            <li><strong>Steam Cleaning:</strong> Deep clean for upholstery, carpets, and mats.</li>
+            <li><strong>Interior Vacuuming:</strong> Full vacuum of seats, carpets, and mats.</li>
+            <li><strong>Dashboard & Console Cleaning:</strong> Wipe down and restore shine.</li>
+            <li><strong>Window & Mirror Cleaning:</strong> Ensure spotless windows and mirrors.</li>
+        </ul>
+        <h2>Starting Prices:</h2>
+        <ul>
+            <li><strong>Sedans:</strong> Starting at $75</li>
+            <li><strong>SUVs/Trucks:</strong> Starting at $100</li>
+        </ul>
+        <p>The Basic Detailing Package is a great way to maintain your car’s cleanliness on a regular basis. For a deeper level of care, check out our Full or Premium packages.</p>
+    </section>
 
-    <h2>Starting Prices:</h2>
-    <ul>
-        <li><strong>Sedans:</strong> Starting at $75</li>
-        <li><strong>SUVs/Trucks:</strong> Starting at $100</li>
-    </ul>
-</section>
-
-<section class="posts">
-    <article>
-        <h2>Before: Basic Cleaning</h2>
-        <img src="images/beforeint.png" alt="Before interior cleaning">
-        <p>Customer's interior hadn’t been cleaned in months. They chose the Basic Package to get the job done.</p>
-    </article>
-
-    <article>
-        <h2>After: Basic Cleaning</h2>
-        <img src="images/afterint.png" alt="After interior cleaning">
-        <p>Interior looking as brand-new.</p>
-    </article>
-</section>
-
-<footer>
-    <h3>Contact Us</h3>
-    <p>Phone: <a href="#">(443) 272-9723</a> | Email: <a href="#">uahmed20255@gmail.com</a></p>
-    <p>Follow us on <a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
-</footer>
-
+    <section class="before-after">
+        <div>
+            <img src="images/beforeint.png" alt="Before interior cleaning">
+            <h3>Before Cleaning</h3>
+        </div>
+        <div>
+            <img src="images/afterint.png" alt="After interior cleaning">
+            <h3>After Cleaning</h3>
+        </div>
+    </section>
 </body>
 </html>
+
