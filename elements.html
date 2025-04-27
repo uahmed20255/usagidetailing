@@ -1,92 +1,134 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Contact Us - Usagi Detailing</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+  <title>Contact Us - Usagi Detailing</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
+      color: #fff;
+    }
+    header, nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      padding: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #ffa500;
+    }
+    .intro {
+      text-align: center;
+      padding: 4em 1em;
+    }
+    .intro h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .intro .highlight {
+      color: #ffc107;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+    .intro p {
+      font-style: italic;
+      color: #ccc;
+      margin: 1em 0 2em;
+    }
+    .content {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      color: #000;
+      border-radius: 10px;
+      padding: 2em;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .content h2 {
+      margin-top: 0;
+    }
+    .content a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .content a:hover {
+      color: #ffa500;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 1em;
+      background: transparent;
+      border: 2px solid #000;
+      color: #000;
+      padding: 0.75em 1.5em;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+    .button:hover {
+      background: #000;
+      color: #fff;
+    }
+    .content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 2em;
+    }
+  </style>
 </head>
-<body class="is-preload">
+<body>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">About Us</a></li>
+        <li><a href="generic.html">Gallery</a></li>
+        <li class="active"><a href="elements.html">Contact Us</a></li>
+        <li><a href="basic.html">Basic Package</a></li>
+        <li><a href="full.html">Full Package</a></li>
+        <li><a href="premium.html">Premium Package</a></li>
+        <li><a href="extra.html">Ceramic Coating</a></li>
+        <li><a href="lights.html">Headlight Restoration</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <!-- Header -->
-        <header id="header">
-            <a href="index.html" class="logo">Usagi Detailing</a>
-        </header>
+  <section class="intro">
+    <h1>CONTACT<br><span class="highlight">US</span></h1>
+    <p>Get in touch with Usagi Detailing. We’re ready to bring your vehicle back to life!</p>
+  </section>
 
-        <!-- Nav -->
-        <nav id="nav">
-            <ul class="links">
-                <li><a href="index.html">About Us</a></li>
-                <li><a href="generic.html">Gallery</a></li>
-                <li class="active"><a href="elements.html">Contact Us</a></li>
-                <li><a href="basic.html">Basic Package</a></li>
-                <li><a href="full.html">Full Package</a></li>
-                <li><a href="premium.html">Premium Package</a></li>
-                <li><a href="extra.html">Ceramic Coating</a></li>
-                <li><a href="lights.html">Headlight Restoration</a></li>
-            </ul>
-            <ul class="icons">
-                <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="icon brands fa-google"><span class="label">Google Form</span></a></li>
-            </ul>
-        </nav>
+  <section class="content">
+    <h2>Contact Information</h2>
+    <p><strong>Phone:</strong> <a href="tel:+16673454637">1-667-345-4637</a></p>
+    <p><strong>Email:</strong> <a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
+    <p><strong>Address:</strong> 1234 Somewhere Road #87257, Nashville, TN 00000-0000</p>
 
-        <!-- Main -->
-        <div id="main">
-            <!-- Post -->
-            <section class="post">
-                <header class="major">
-                    <h1>Contact Information</h1>
-                </header>
+    <h3>Follow Us</h3>
+    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
 
-                <p>For inquiries, quotes, or to schedule a service, please use the contact information below. We look forward to serving you!</p>
+    <h3>Book an Appointment</h3>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="button">Google Form</a>
 
-                <!-- Contact Info -->
-                <div class="contact-info">
-                    <p><strong>Phone:</strong> <a href="tel:+16673454637">1-667-345-4637</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
-                    <p><strong>Address:</strong> 1234 Somewhere Road #87257, Nashville, TN 00000-0000</p>
-                </div>
-
-                <!-- Social Links and Google Form -->
-                <div class="social-google-section">
-                    <div class="social-links">
-                        <h3>Follow Us:</h3>
-                        <ul class="icons alt">
-                            <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                        </ul>
-                    </div>
-                    <div class="google-form">
-                        <h3>Google Form for Appointment:</h3>
-                        <ul class="icons alt">
-                            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="icon brands fa-google"><span class="label">Google Form</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Contact Footer Section -->
-                <div class="contact-footer">
-                    <img src="images/pic01.jpg" alt="Usagi Detailing Logo">
-                </div>
-            </section>
-
-        </div>
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+    <img src="images/pic01.jpg" alt="Usagi Detailing">
+  </section>
 
 </body>
 </html>
-
