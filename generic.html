@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Gallery - Usagi Detailing</title>
+    <title>Basic Detailing Package - Usagi Detailing</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <style>
         body {
             margin: 0;
@@ -21,7 +21,6 @@
         nav ul {
             list-style: none;
             display: flex;
-            flex-wrap: wrap;
             gap: 1.5em;
             padding: 0;
             margin: 0;
@@ -37,10 +36,10 @@
         }
         .intro {
             text-align: center;
-            padding: 4em 1em 2em;
+            padding: 3em 1em;
         }
         .intro h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin: 0;
         }
         .intro .highlight {
@@ -48,111 +47,130 @@
             letter-spacing: 2px;
             font-weight: 600;
         }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+        .service-details {
+            max-width: 1000px;
+            margin: 2em auto;
             padding: 2em;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .gallery img {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
+            background: #1a1a1a;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .service-details h2 {
+            color: #ffa500;
+            margin-top: 1em;
+        }
+        .service-details ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 0;
+            list-style: none;
+        }
+        .service-details ul li {
+            background-color: #000;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        .service-details ul li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
         }
-        footer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2em;
             padding: 2em;
-            background: #0a0a0a;
-            color: #ccc;
         }
-        footer section h3 {
-            color: #ffc107;
+        .posts article {
+            background: #1a1a1a;
+            padding: 1em;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
-        footer a {
+        .posts article img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+            aspect-ratio: 4/3;
+        }
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 2em 1em;
+        }
+        footer h3 {
             color: #ffa500;
-            text-decoration: none;
         }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .intro h1 {
-                font-size: 2.2rem;
-            }
-            nav ul {
-                gap: 1em;
-                justify-content: center;
-            }
-        }
-        @media (max-width: 480px) {
-            .intro h1 {
-                font-size: 1.8rem;
-            }
-            nav ul {
-                flex-direction: column;
-                align-items: center;
+        @media (max-width: 700px) {
+            .service-details ul {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <section class="intro">
-        <h1>USAGI<br>DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
-        <p>Check out our gallery of recent details!</p>
-    </section>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">About Us</a></li>
-                <li class="active"><a href="generic.html">Gallery</a></li>
-                <li><a href="elements.html">Contact Us</a></li>
-                <li><a href="basic.html">Basic Package</a></li>
-                <li><a href="full.html">Full Package</a></li>
-                <li><a href="premium.html">Premium Package</a></li>
-                <li><a href="extra.html">Ceramic Coating</a></li>
-                <li><a href="lights.html">Headlight Restoration</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div class="gallery">
-        <img src="images/IMG_1356.jpg" alt="Interior detailing">
-        <img src="images/IMG_1357.jpg" alt="Sedan exterior clean">
-        <img src="images/IMG_1358.jpg" alt="Tire and wheel close-up">
-        <img src="images/IMG_1359.jpg" alt="Blue BMW exterior">
-        <img src="images/IMG_1361.jpg" alt="Foam wash on BMW">
-        <img src="images/IMG_1363.jpg" alt="SUV foam wash">
-        <img src="images/IMG_1364.jpg" alt="Red minivan cleaning">
-        <img src="images/IMG_1360.jpg" alt="Foamy wheel close-up">
-        <img src="images/afterint.png" alt="Interior finish">
+<header>
+    <div class="intro">
+        <h1>USAGI DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
     </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="generic.html">Gallery</a></li>
+            <li><a href="elements.html">Contact Us</a></li>
+            <li><a href="basic.html">Basic Package</a></li>
+            <li><a href="full.html">Full Package</a></li>
+            <li><a href="premium.html">Premium Package</a></li>
+            <li><a href="extra.html">Ceramic Coating</a></li>
+            <li><a href="lights.html">Headlight Restoration</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <footer>
-        <section>
-            <h3>Phone</h3>
-            <p><a href="tel:+14432729723">(443) 272-9723</a></p>
-        </section>
-        <section>
-            <h3>Email</h3>
-            <p><a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
-        </section>
-        <section>
-            <h3>Social</h3>
-            <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
-        </section>
-    </footer>
+<section class="service-details">
+    <h2>Basic Detailing Package</h2>
+    <p>Our Basic Detailing Package provides essential cleaning and care for both the interior and exterior of your vehicle. Perfect for regular maintenance to keep your car looking fresh and well-maintained.</p>
+
+    <h2>What’s Included:</h2>
+    <ul>
+        <li><strong>Exterior Wash & Dry:</strong> Hand wash and dry to remove dirt and grime.</li>
+        <li><strong>Tire & Wheel Cleaning:</strong> Shine and clean tires and wheels.</li>
+        <li><strong>Steam Cleaning:</strong> Sanitize upholstery, carpets, and mats.</li>
+        <li><strong>Interior Vacuuming:</strong> Vacuum seats, carpets, and mats.</li>
+        <li><strong>Dashboard & Console Cleaning:</strong> Wipe down and polish hard surfaces.</li>
+        <li><strong>Window & Mirror Cleaning:</strong> Crystal-clear glass cleaning.</li>
+    </ul>
+
+    <h2>Starting Prices:</h2>
+    <ul>
+        <li><strong>Sedans:</strong> Starting at $75</li>
+        <li><strong>SUVs/Trucks:</strong> Starting at $100</li>
+    </ul>
+</section>
+
+<section class="posts">
+    <article>
+        <h2>Before: Basic Cleaning</h2>
+        <img src="images/beforeint.png" alt="Before interior cleaning">
+        <p>Customer's interior hadn’t been cleaned in months. They chose the Basic Package to get the job done.</p>
+    </article>
+
+    <article>
+        <h2>After: Basic Cleaning</h2>
+        <img src="images/afterint.png" alt="After interior cleaning">
+        <p>Interior looking as brand-new.</p>
+    </article>
+</section>
+
+<footer>
+    <h3>Contact Us</h3>
+    <p>Phone: <a href="#">(443) 272-9723</a> | Email: <a href="#">uahmed20255@gmail.com</a></p>
+    <p>Follow us on <a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
+</footer>
+
 </body>
 </html>
