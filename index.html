@@ -17,12 +17,15 @@
       justify-content: center;
       align-items: center;
       padding: 1em;
+      flex-wrap: wrap;
     }
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
       gap: 1.5em;
       padding: 0;
+      margin: 0;
     }
     nav ul li a {
       color: #fff;
@@ -31,13 +34,14 @@
       font-family: 'Poppins', sans-serif;
       letter-spacing: 0.5px;
       transition: color 0.3s ease;
+      font-size: 1rem;
     }
     nav ul li a:hover {
       color: #ffa500;
     }
     .intro {
       text-align: center;
-      padding: 4em 1em;
+      padding: 4em 1em 2em;
     }
     .intro h1 {
       font-size: 3rem;
@@ -72,40 +76,6 @@
       background: #fff;
       color: #000;
     }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2em;
-      padding: 2em;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .card {
-      background: #fff;
-      color: #000;
-      border-radius: 10px;
-      overflow: hidden;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      font-family: 'Open Sans', sans-serif;
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-    }
-    .card h3 {
-      margin: 1em 0 0.5em;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-    }
-    .card p {
-      padding: 0 1em 1em;
-      font-size: 0.95rem;
-      color: #333;
-    }
-    .card .button {
-      margin-bottom: 1em;
-    }
     .who-we-are {
       text-align: center;
       padding: 4em 1em 2em;
@@ -130,13 +100,69 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       margin-top: 2em;
     }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2em;
+      padding: 2em;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #fff;
+      color: #000;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+    .card h3 {
+      margin: 1em 0 0.5em;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+    }
+    .card p {
+      padding: 0 1em 1em;
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .card .button {
+      margin: 1em auto;
+      width: 80%;
+    }
 
+    /* Responsive tweaks */
     @media (max-width: 768px) {
       .intro h1 {
         font-size: 2.2rem;
       }
       .who-we-are h2 {
         font-size: 2rem;
+      }
+      nav ul {
+        gap: 1em;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .intro h1 {
+        font-size: 1.8rem;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8em;
+      }
+      .button {
+        width: 80%;
       }
     }
   </style>
@@ -165,7 +191,7 @@
 
   <section class="who-we-are">
     <h2>Who Are We?</h2>
-    <p>Welcome to <strong>Usagi Detailing</strong>, your premier mobile detailing service serving Baltimore County and Howard County. We bring top-tier car care right to your doorstep. Our skilled professionals are passionate about making your vehicle shine, offering a range of detailing services from basic upkeep to premium restorations like paint correction and ceramic coating. We use high-quality products and techniques to ensure your car not only looks great but stays protected.</p>
+    <p>Welcome to <strong>Usagi Detailing</strong>, your premier mobile detailing service serving Baltimore County and Howard County. We bring top-tier car care right to your doorstep. Our skilled professionals are passionate about making your vehicle shine, offering a range of detailing services from basic upkeep to premium restorations like paint correction and ceramic coating.</p>
     <img src="images/pic01.jpg" alt="Usagi Detailing Team">
   </section>
 
@@ -185,7 +211,7 @@
     <div class="card">
       <img src="images/detail.jpg" alt="Premium Detailing Package">
       <h3>Premium Detailing Package</h3>
-      <p>The ultimate detailing service for customers who want a complete, top-to-bottom restoration, including premium services like paint correction, ceramic coating, and more.</p>
+      <p>The ultimate detailing service for customers who want a complete, top-to-bottom restoration, including premium services like paint correction and ceramic coating.</p>
       <a href="premium.html" class="button">Click here to learn more</a>
     </div>
     <div class="card">
