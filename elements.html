@@ -3,7 +3,7 @@
 <head>
   <title>Contact Us - Usagi Detailing</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <style>
     body {
       margin: 0;
@@ -32,69 +32,63 @@
     nav ul li a:hover {
       color: #ffa500;
     }
-    .intro {
-      text-align: center;
-      padding: 4em 1em;
-    }
-    .intro h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    .intro .highlight {
-      color: #ffc107;
-      letter-spacing: 2px;
-      font-weight: 600;
-    }
-    .intro p {
-      font-style: italic;
-      color: #ccc;
-      margin: 1em 0 2em;
-    }
-    .content {
-      max-width: 600px;
-      margin: 0 auto;
-      background: #fff;
-      color: #000;
+    .contact-section {
+      max-width: 700px;
+      margin: 4em auto;
+      background: rgba(255,255,255,0.05);
       border-radius: 10px;
       padding: 2em;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       text-align: center;
     }
-    .content h2 {
-      margin-top: 0;
+    .contact-section h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5em;
+      color: #ffc107;
     }
-    .content a {
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
+    .contact-info p {
+      font-size: 1.1rem;
+      margin: 1em 0;
     }
-    .content a:hover {
+    .contact-info a {
       color: #ffa500;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .social-links, .google-form {
+      margin-top: 2em;
+    }
+    .social-links h3, .google-form h3 {
+      color: #ffc107;
+      margin-bottom: 0.5em;
     }
     .button {
-      display: inline-block;
-      margin-top: 1em;
       background: transparent;
-      border: 2px solid #000;
-      color: #000;
+      border: 2px solid #ccc;
+      color: #fff;
       padding: 0.75em 1.5em;
       text-decoration: none;
       border-radius: 5px;
       transition: 0.3s ease;
+      display: inline-block;
+      margin-top: 1em;
     }
     .button:hover {
-      background: #000;
-      color: #fff;
+      background: #fff;
+      color: #000;
     }
-    .content img {
+    .contact-footer img {
       width: 100%;
-      border-radius: 10px;
+      max-width: 400px;
       margin-top: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
   </style>
 </head>
 <body>
-
   <header>
     <nav>
       <ul>
@@ -110,25 +104,29 @@
     </nav>
   </header>
 
-  <section class="intro">
-    <h1>CONTACT<br><span class="highlight">US</span></h1>
-    <p>Get in touch with Usagi Detailing. We’re ready to bring your vehicle back to life!</p>
+  <section class="contact-section">
+    <h1>Contact Information</h1>
+    <p>For inquiries, quotes, or to schedule a service, reach out to us!</p>
+
+    <div class="contact-info">
+      <p><strong>📞 Phone:</strong> <a href="tel:+16673454637">1-667-345-4637</a></p>
+      <p><strong>📧 Email:</strong> <a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
+      <p><strong>📍 Address:</strong> 1234 Somewhere Road, Baltimore, MD</p>
+    </div>
+
+    <div class="social-links">
+      <h3>Follow Us:</h3>
+      <a href="https://www.instagram.com/usagidetailing/" class="button">Instagram</a>
+    </div>
+
+    <div class="google-form">
+      <h3>Book an Appointment:</h3>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="button">Google Form</a>
+    </div>
+
+    <div class="contact-footer">
+      <img src="images/pic01.jpg" alt="Usagi Detailing Logo">
+    </div>
   </section>
-
-  <section class="content">
-    <h2>Contact Information</h2>
-    <p><strong>Phone:</strong> <a href="tel:+16673454637">1-667-345-4637</a></p>
-    <p><strong>Email:</strong> <a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
-    <p><strong>Address:</strong> 1234 Somewhere Road #87257, Nashville, TN 00000-0000</p>
-
-    <h3>Follow Us</h3>
-    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
-
-    <h3>Book an Appointment</h3>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="button">Google Form</a>
-
-    <img src="images/pic01.jpg" alt="Usagi Detailing">
-  </section>
-
 </body>
 </html>
