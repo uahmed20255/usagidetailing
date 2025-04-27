@@ -234,6 +234,97 @@ h3 {
 
 }
 
+
+/* Background Gradient */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+}
+
+/* Centered Content Box */
+#wrapper {
+    max-width: 800px;
+    margin: 5rem auto;
+    text-align: center;
+    padding: 4rem;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* Main Headings */
+h1 {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+/* Subheading (Yellow Text) */
+h2 {
+    font-size: 1.5rem;
+    color: #fbbf24; /* yellow-400 */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+/* Subtitle / Tagline */
+p {
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* Button Styling */
+button, .button {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1.5rem;
+    transition: background 0.3s;
+}
+
+button:hover, .button:hover {
+    background: white;
+    color: black;
+}
+
+/* Navbar */
+#nav {
+    display: flex;
+    justify-content: center;
+    background: rgba(0,0,0,0.7);
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+#nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#nav a:hover {
+    color: #fbbf24; /* yellow hover */
+}
+
+
 .premium-posts > article {
     flex-shrink: 1;
     flex-grow: 0;
