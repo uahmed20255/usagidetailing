@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Usagi Detailing</title>
+    <title>Massively by HTML5 UP</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -15,31 +15,12 @@
   }
 
   /* Navbar Enhancements */
-  #nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(10, 10, 10, 0.9);
+  #nav ul.links {
+    background: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 30px;
-    z-index: 1000;
-  }
-
-  #nav .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-
-  #nav ul.links {
-    display: flex;
-    gap: 20px;
+    border-radius: 8px;
+    padding: 10px 20px;
   }
 
   #nav ul.links li a {
@@ -53,13 +34,10 @@
     color: #ffa500;
   }
 
-  #intro {
-    padding-top: 140px;
-    text-align: center;
-  }
-
+  /* Title Section */
   #intro h1 {
     font-size: 3rem;
+    text-align: center;
     margin-bottom: 0.5em;
   }
 
@@ -72,6 +50,7 @@
 
   #intro p {
     font-size: 1.1rem;
+    text-align: center;
     color: #ccc;
     font-style: italic;
   }
@@ -91,14 +70,39 @@
     background-color: #fff;
     color: #000;
   }
+
+  /* Section Background */
+  #main {
+    background: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Image Styling */
+  .image img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 </style>
 </head>
 <body class="is-preload">
   <div id="wrapper" class="fade-in">
+    <div id="intro">
+      <h1>USAGI<br /><span class="smaller-text">OWN THE NIGHT</span><br />DETAILING</h1>
+      <p>Where every detail counts—bringing out the best in your vehicle, one wash at a time.</p>
+      <ul class="actions">
+        <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+      </ul>
+    </div>
 
-    <!-- Navbar -->
-    <nav id="nav">
+    <header id="header">
       <a href="index.html" class="logo">USAGI DETAILING</a>
+    </header>
+
+    <nav id="nav">
       <ul class="links">
         <li class="active"><a href="index.html">About us</a></li>
         <li><a href="generic.html">Gallery</a></li>
@@ -115,17 +119,92 @@
       </ul>
     </nav>
 
-    <!-- Intro -->
-    <div id="intro">
-      <h1>USAGI<br /><span class="smaller-text">OWN THE NIGHT</span><br />DETAILING</h1>
-      <p>Where every detail counts—bringing out the best in your vehicle, one wash at a time.</p>
-      <ul class="actions">
-        <li><a href="#main" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-      </ul>
+    <div id="main">
+      <article class="post featured">
+        <header class="major">
+          <h2><a href="#">WHO ARE WE?</a></h2>
+          <p>Welcome to <strong>Usagi Detailing</strong>, your premier mobile detailing service serving Baltimore County and Howard County. We are dedicated to delivering top-notch car care right at your doorstep. Our team of skilled professionals brings everything needed to rejuvenate your vehicle, offering a full range of detailing services that cater to all your needs.</p>
+        </header>
+        <a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+        <ul class="actions special">
+          <strong>Usagi Detailing</strong>
+        </ul>
+      </article>
+
+      <section class="posts">
+        <article>
+          <header>
+            <h2><a href="#">Basic Detailing Package</a></h2>
+          </header>
+          <a href="#" class="image fit"><img src="images/car.jpg" alt="" /></a>
+          <p>Ideal for regular upkeep, this package includes essential cleaning and protection to keep your vehicle looking fresh and well-maintained.</p>
+          <ul class="actions special">
+            <li><a href="Basic.html" class="button">Click here to learn more</a></li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h2><a href="#">Full Detailing Package</a></h2>
+          </header>
+          <a href="#" class="image fit"><img src="images/wash.jpeg" alt="" /></a>
+          <p>A more in-depth cleaning that covers both interior and exterior, providing a thorough restoration of your car’s appearance.</p>
+          <ul class="actions special">
+            <li><a href="full.html" class="button">Click here to learn more</a></li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h2><a href="#">Premium Detailing Package</a></h2>
+          </header>
+          <a href="#" class="image fit"><img src="images/detail.jpg" alt="" /></a>
+          <p>The ultimate detailing service for customers who want a complete, top-to-bottom restoration, including premium services like paint correction, ceramic coating, and more.</p>
+          <ul class="actions special">
+            <li><a href="Premium.html" class="button">Click here to learn more</a></li>
+          </ul>
+        </article>
+
+        <article>
+          <header>
+            <h2><a href="#">Gallery</a></h2>
+          </header>
+          <a href="#" class="image fit"><img src="images/IMG_1363.jpg" alt="" /></a>
+          <p>Check out our gallery of recent details!</p>
+          <ul class="actions special">
+            <li><a href="generic.html" class="button">Click here to see gallery</a></li>
+          </ul>
+        </article>
+      </section>
+
+      <footer>
+        <div class="pagination">
+          <a href="generic.html" class="page active">1</a>
+          <a href="elements.html" class="page">2</a>
+          <a href="Basic.html" class="page">3</a>
+          <a href="Premium.html" class="page">4</a>
+          <a href="extra.html" class="page">5</a>
+        </div>
+      </footer>
     </div>
 
-    <!-- Rest of your content here -->
-
+    <footer id="footer">
+      <section>
+        <h3>Phone</h3>
+        <p><a href="#">(443) 272-9723</a></p>
+      </section>
+      <section>
+        <h3>Email</h3>
+        <p><a href="#">uahmed20255@gmail.com</a></p>
+      </section>
+      <section>
+        <h3>Social</h3>
+        <ul class="icons alt">
+          <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+          <li><a href="https://www.instagram.com/usagidetailing/" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+        </ul>
+      </section>
+    </footer>
   </div>
 
   <script src="assets/js/jquery.min.js"></script>
