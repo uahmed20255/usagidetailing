@@ -1,158 +1,189 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Gallery - Usagi Detailing</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
-            color: #fff;
-        }
-        header, nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1em;
-            flex-wrap: wrap;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5em;
-            padding: 0;
-            margin: 0;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        nav ul li a:hover {
-            color: #ffa500;
-        }
-        .intro {
-            text-align: center;
-            padding: 4em 1em 2em;
-        }
-        .intro h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-        .intro .highlight {
-            color: #ffc107;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 2em;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .gallery img {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
-        }
-        footer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2em;
-            padding: 2em;
-            background: #0a0a0a;
-            color: #ccc;
-        }
-        footer section h3 {
-            color: #ffc107;
-        }
-        footer a {
-            color: #ffa500;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .intro h1 {
-                font-size: 2.2rem;
-            }
-            nav ul {
-                gap: 1em;
-                justify-content: center;
-            }
-        }
-        @media (max-width: 480px) {
-            .intro h1 {
-                font-size: 1.8rem;
-            }
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+  <title>Gallery - Usagi Detailing</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
+      color: #fff;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5em;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #ffa500;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 8px;
+        padding: 1em;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+    }
+    .intro {
+      text-align: center;
+      padding: 3em 1em 1em;
+    }
+    .intro h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .intro .highlight {
+      color: #ffc107;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 2em;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    }
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      padding: 2em;
+      background: #0a0a0a;
+      color: #ccc;
+    }
+    footer section h3 {
+      color: #ffc107;
+    }
+    footer a {
+      color: #ffa500;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <section class="intro">
-        <h1>USAGI<br>DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
-        <p>Check out our gallery of recent details!</p>
-    </section>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">About Us</a></li>
-                <li class="active"><a href="generic.html">Gallery</a></li>
-                <li><a href="elements.html">Contact Us</a></li>
-                <li><a href="basic.html">Basic Package</a></li>
-                <li><a href="full.html">Full Package</a></li>
-                <li><a href="premium.html">Premium Package</a></li>
-                <li><a href="extra.html">Ceramic Coating</a></li>
-                <li><a href="lights.html">Headlight Restoration</a></li>
-            </ul>
-        </nav>
-    </header>
+<header>
+  <a href="index.html" class="logo">USAGI DETAILING</a>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav>
+    <ul id="menu">
+      <li><a href="index.html">About Us</a></li>
+      <li class="active"><a href="generic.html">Gallery</a></li>
+      <li><a href="elements.html">Contact Us</a></li>
+      <li><a href="basic.html">Basic Package</a></li>
+      <li><a href="full.html">Full Package</a></li>
+      <li><a href="premium.html">Premium Package</a></li>
+      <li><a href="extra.html">Ceramic Coating</a></li>
+      <li><a href="lights.html">Headlight Restoration</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <div class="gallery">
-        <img src="images/IMG_1356.jpg" alt="Interior detailing">
-        <img src="images/IMG_1357.jpg" alt="Sedan exterior clean">
-        <img src="images/IMG_1358.jpg" alt="Tire and wheel close-up">
-        <img src="images/IMG_1359.jpg" alt="Blue BMW exterior">
-        <img src="images/IMG_1361.jpg" alt="Foam wash on BMW">
-        <img src="images/IMG_1363.jpg" alt="SUV foam wash">
-        <img src="images/IMG_1364.jpg" alt="Red minivan cleaning">
-        <img src="images/IMG_1360.jpg" alt="Foamy wheel close-up">
-        <img src="images/afterint.png" alt="Interior finish">
-    </div>
+<section class="intro">
+  <h1>USAGI<br>DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
+  <p>Check out our gallery of recent details!</p>
+</section>
 
-    <footer>
-        <section>
-            <h3>Phone</h3>
-            <p><a href="tel:+14432729723">(443) 272-9723</a></p>
-        </section>
-        <section>
-            <h3>Email</h3>
-            <p><a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
-        </section>
-        <section>
-            <h3>Social</h3>
-            <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
-        </section>
-    </footer>
+<div class="gallery">
+  <img src="images/IMG_1356.jpg" alt="Interior detailing">
+  <img src="images/IMG_1357.jpg" alt="Sedan exterior clean">
+  <img src="images/IMG_1358.jpg" alt="Tire and wheel close-up">
+  <img src="images/IMG_1359.jpg" alt="Blue BMW exterior">
+  <img src="images/IMG_1361.jpg" alt="Foam wash on BMW">
+  <img src="images/IMG_1363.jpg" alt="SUV foam wash">
+  <img src="images/IMG_1364.jpg" alt="Red minivan cleaning">
+  <img src="images/IMG_1360.jpg" alt="Foamy wheel close-up">
+  <img src="images/afterint.png" alt="Interior finish">
+</div>
+
+<footer>
+  <section>
+    <h3>Phone</h3>
+    <p><a href="tel:+14432729723">(443) 272-9723</a></p>
+  </section>
+  <section>
+    <h3>Email</h3>
+    <p><a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
+  </section>
+  <section>
+    <h3>Social</h3>
+    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
+  </section>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+  }
+</script>
+
 </body>
 </html>
