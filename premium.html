@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usagi Detailing - Premium Package</title>
+    <title>Premium Package - Usagi Detailing</title>
     <style>
         body {
             margin: 0;
@@ -11,34 +11,31 @@
             background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
             color: #fff;
         }
-        header, nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        header {
+            background: rgba(0, 0, 0, 0.8);
             padding: 1em;
-            flex-wrap: wrap;
+            position: relative;
         }
         nav ul {
             list-style: none;
             display: flex;
-            flex-wrap: wrap;
-            gap: 1.5em;
+            justify-content: center;
             padding: 0;
             margin: 0;
+            gap: 1.5em;
         }
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
-            font-size: 1rem;
         }
         nav ul li a:hover {
             color: #ffa500;
         }
         .intro {
             text-align: center;
-            padding: 4em 1em 2em;
+            padding: 3em 1em 2em;
         }
         .intro h1 {
             font-size: 3rem;
@@ -49,40 +46,54 @@
             letter-spacing: 2px;
             font-weight: 600;
         }
-        .intro p {
-            font-style: italic;
-            color: #ccc;
-            margin: 1em 0 2em;
-            font-size: 1.1rem;
-        }
-        .service-section {
-            max-width: 900px;
+        .section {
+            max-width: 1000px;
             margin: 2em auto;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
             padding: 2em;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            background: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
-        .service-section h2 {
-            color: #ffc107;
-            font-size: 2rem;
+        .section h2 {
+            color: #ffa500;
+            margin-top: 1em;
         }
-        .service-details ul {
+        .section ul {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin: 20px 0;
             padding: 0;
             list-style: none;
         }
-        .service-details ul li {
+        .section ul li {
             background-color: #000;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .service-details ul li strong {
-            color: #ffc107;
+        .section ul li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.7);
+        }
+        .before-after {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2em;
+        }
+        .before-after article img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        footer {
+            background: #111;
+            text-align: center;
+            padding: 2em 1em;
+            margin-top: 2em;
+        }
+        footer h3 {
+            color: #ffa500;
         }
         .learn-button {
             display: inline-block;
@@ -99,61 +110,56 @@
             background: #fff;
             color: #000;
         }
-        .before-after {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 2em;
+        /* Hamburger menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 20px;
         }
-        .before-after article img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-        }
-        .contact-section {
-            max-width: 900px;
-            margin: 2em auto;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            padding: 2em;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-        .contact-section h2 {
-            font-size: 2rem;
-            color: #ffc107;
-        }
-        .contact-section p, .contact-section a {
-            font-size: 1rem;
-            color: #fff;
-        }
-        .contact-section a {
-            color: #ffa500;
-            text-decoration: none;
-        }
-        .contact-section a:hover {
-            text-decoration: underline;
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
         }
         @media (max-width: 768px) {
-            .service-details ul {
+            nav ul {
+                flex-direction: column;
+                display: none;
+                background: #000;
+                border-radius: 10px;
+                margin-top: 1em;
+            }
+            nav ul.show {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .section ul {
                 grid-template-columns: 1fr;
             }
-            .before-after {
-                grid-template-columns: 1fr;
+            .intro h1 {
+                font-size: 2.2rem;
             }
         }
     </style>
 </head>
 <body>
 
-<section class="intro">
-    <h1>USAGI<br>DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
-    <p>Where every detail counts—bringing out the best in your vehicle, one wash at a time.</p>
-</section>
-
 <header>
+    <div class="intro">
+        <h1>USAGI DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
+        <p>Where every detail counts—bringing out the best in your vehicle, one wash at a time.</p>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+    </div>
     <nav>
-        <ul>
+        <ul id="menu">
             <li><a href="index.html">About Us</a></li>
             <li><a href="generic.html">Gallery</a></li>
             <li><a href="elements.html">Contact Us</a></li>
@@ -166,67 +172,57 @@
     </nav>
 </header>
 
-<section class="service-section">
+<section class="section">
     <h2>Premium Detailing Package</h2>
-    <p>Our Premium Detailing Package is the most comprehensive service we offer, designed to provide a complete restoration for your vehicle. This package includes all the services from the Full Detailing Package, plus additional high-end treatments that ensure your car looks and feels brand new.</p>
-
+    <p>Our Premium Detailing Package is the most comprehensive service we offer, designed to restore your vehicle inside and out with high-end treatments.</p>
     <div class="service-details">
         <h2>What’s Included:</h2>
         <ul>
-            <li><strong>Exterior Wash & Dry:</strong> A complete hand wash followed by a hand dry to remove dirt, grime, and contaminants, leaving your car spotless.
+            <li><strong>Exterior Wash & Dry:</strong> Hand wash and dry, leaving a spotless finish.
                 <a href="light.html" class="learn-button">Learn About Paint Correction</a>
             </li>
-            <li><strong>Ceramic Coating:</strong> Advanced protection for your car’s exterior with a ceramic coating that offers long-lasting shine, durability, and resistance to environmental contaminants.
+            <li><strong>Ceramic Coating:</strong> Long-lasting shine and protection.
                 <a href="extra.html" class="learn-button">Learn About Ceramic Coating</a>
             </li>
-            <li><strong>Interior Steam Cleaning:</strong> Deep steam cleaning to remove dirt, bacteria, and stains from upholstery, carpets, and mats, leaving your car’s interior spotless and sanitized.</li>
-            <li><strong>Interior Vacuuming:</strong> Full vacuuming of all seats, carpets, floor mats, and other areas.</li>
-            <li><strong>Dashboard & Console Cleaning:</strong> Detailed cleaning and restoration of your dashboard, console, and all hard surfaces.</li>
-            <li><strong>Leather & Fabric Treatment:</strong> We clean, condition, and protect both leather and fabric seats, ensuring they stay fresh and comfortable.</li>
-            <li><strong>Pet Hair Removal:</strong> Special attention to removing stubborn pet hair from all seats, carpets, and upholstery.</li>
-            <li><strong>Plastic Shine Treatment:</strong> We restore the shine to all plastic surfaces inside your vehicle, including mats, trim, and faded plastic or rubber parts, giving them a like-new appearance.</li>
-            <li><strong>Window & Mirror Cleaning:</strong> Comprehensive cleaning of your car’s windows and mirrors, leaving a streak-free finish.</li>
-            <li><strong>Air Freshener:</strong> We leave your car smelling fresh with a scent of your choice.</li>
+            <li><strong>Interior Steam Cleaning:</strong> Sanitizes upholstery and carpets.</li>
+            <li><strong>Dashboard & Console Cleaning:</strong> Polished and spotless surfaces.</li>
+            <li><strong>Leather & Fabric Treatment:</strong> Conditioning for long-term care.</li>
+            <li><strong>Plastic Shine Treatment:</strong> Restores shine to interior plastics and trims.</li>
+            <li><strong>Window & Mirror Cleaning:</strong> Streak-free finish for clear visibility.</li>
         </ul>
         <h2>Starting Prices:</h2>
         <ul>
-            <li><strong>Sedans:</strong> Starting at $300</li>
-            <li><strong>SUVs/Trucks:</strong> Starting at $400</li>
+            <li><strong>Sedans:</strong> $300</li>
+            <li><strong>SUVs/Trucks:</strong> $400</li>
         </ul>
     </div>
-
-    <h2>Why Choose the Premium Detailing Package?</h2>
-    <p>The Premium Detailing Package is the ultimate choice for those who want to give their car the best possible care. Whether you’re looking to restore your car’s paint, protect its exterior with advanced coatings, or ensure your interior is deep-cleaned and sanitized, this package covers all bases. With services like paint correction, ceramic coating, plastic shine treatment, and interior steam cleaning, your vehicle will look and feel brand new inside and out.</p>
 </section>
 
 <section class="before-after">
     <article>
-        <h2>Before: Premium Cleaning 1</h2>
-        <img src="images/beforetire.png" alt="Before Premium Cleaning 1: Dirty wheels before decontamination">
-        <p>Filthy wheels before being iron decontaminated.</p>
+        <h2>Before</h2>
+        <img src="images/beforetire.png" alt="Before Premium Cleaning">
+        <p>Filthy wheels before iron decontamination.</p>
     </article>
     <article>
-        <h2>After: Premium Cleaning 1</h2>
-        <img src="images/aftertire.png" alt="After Premium Cleaning 1: Clean, shiny wheels after detailing">
-        <p>Wheels as good as brand new!</p>
+        <h2>After</h2>
+        <img src="images/aftertire.png" alt="After Premium Cleaning">
+        <p>Shiny, clean wheels post-detailing.</p>
     </article>
 </section>
 
-<section class="contact-section">
-    <h2>Contact Information</h2>
-    <p>For inquiries, quotes, or to schedule a service, reach out to us!</p>
-    <p><strong>📞 Phone:</strong> <a href="tel:+16673454637">1-667-345-4637</a></p>
-    <p><strong>📧 Email:</strong> <a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
-    <p><strong>📍 Address:</strong> 1234 Somewhere Road, Baltimore, MD</p>
-    <div class="social-links">
-        <h3>Follow Us:</h3>
-        <a href="https://www.instagram.com/usagidetailing/" class="learn-button">Instagram</a>
-    </div>
-    <div class="google-form">
-        <h3>Book an Appointment:</h3>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="learn-button">Google Form</a>
-    </div>
-</section>
+<footer>
+    <h3>Contact Us</h3>
+    <p>📞 <a href="tel:+16673454637">(667) 345-4637</a> | 📧 <a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
+    <p>📍 1234 Somewhere Road, Baltimore, MD</p>
+    <p>Follow us on <a href="https://www.instagram.com/usagidetailing/">Instagram</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform">Book Now</a></p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById('menu').classList.toggle('show');
+    }
+</script>
 
 </body>
 </html>
