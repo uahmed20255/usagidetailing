@@ -11,17 +11,22 @@
       background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
       color: #fff;
     }
-    header, nav {
+    header {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 1em;
-      flex-wrap: wrap;
+      padding: 1em 2em;
+      background: rgba(0, 0, 0, 0.7);
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      text-decoration: none;
     }
     nav ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
       gap: 1.5em;
       padding: 0;
       margin: 0;
@@ -31,10 +36,38 @@
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
-      font-size: 1rem;
     }
     nav ul li a:hover {
       color: #ffa500;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      margin: 4px 0;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 8px;
+        padding: 1em;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
+      }
     }
     .intro {
       text-align: center;
@@ -110,89 +143,65 @@
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
-
-    /* Responsive tweaks */
-    @media (max-width: 768px) {
-      .intro h1 {
-        font-size: 2.2rem;
-      }
-      .intro p {
-        font-size: 1rem;
-      }
-      nav ul {
-        gap: 1em;
-        justify-content: center;
-      }
-      .contact-section h2 {
-        font-size: 2rem;
-      }
-      .contact-info p {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .intro h1 {
-        font-size: 1.8rem;
-      }
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.8em;
-      }
-      .button {
-        width: 80%;
-        padding: 0.75em;
-      }
-    }
   </style>
 </head>
 <body>
 
-  <section class="intro">
-    <h1>USAGI<br>DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
-    <p>Where every detail counts—bringing out the best in your vehicle, one wash at a time.</p>
-  </section>
+<header>
+  <a href="index.html" class="logo">USAGI DETAILING</a>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <nav>
+    <ul id="menu">
+      <li><a href="index.html">About Us</a></li>
+      <li><a href="generic.html">Gallery</a></li>
+      <li class="active"><a href="elements.html">Contact Us</a></li>
+      <li><a href="basic.html">Basic Package</a></li>
+      <li><a href="full.html">Full Package</a></li>
+      <li><a href="premium.html">Premium Package</a></li>
+      <li><a href="extra.html">Ceramic Coating</a></li>
+      <li><a href="lights.html">Headlight Restoration</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <header>
-    <nav>
-      <ul>
-        <li><a href="index.html">About Us</a></li>
-        <li><a href="generic.html">Gallery</a></li>
-        <li class="active"><a href="elements.html">Contact Us</a></li>
-        <li><a href="basic.html">Basic Package</a></li>
-        <li><a href="full.html">Full Package</a></li>
-        <li><a href="premium.html">Premium Package</a></li>
-        <li><a href="extra.html">Ceramic Coating</a></li>
-        <li><a href="lights.html">Headlight Restoration</a></li>
-      </ul>
-    </nav>
-  </header>
+<section class="intro">
+  <h1>USAGI<br>DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
+  <p>Where every detail counts—bringing out the best in your vehicle, one wash at a time.</p>
+</section>
 
-  <section class="contact-section">
-    <h2>Contact Information</h2>
-    <p>For inquiries, quotes, or to schedule a service, reach out to us!</p>
+<section class="contact-section">
+  <h2>Contact Information</h2>
+  <p>For inquiries, quotes, or to schedule a service, reach out to us!</p>
+  <div class="contact-info">
+    <p><strong>📞 Phone:</strong> <a href="tel:+16673454637">1-667-345-4637</a></p>
+    <p><strong>📧 Email:</strong> <a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
+    <p><strong>📍 Address:</strong> 1234 Somewhere Road, Baltimore, MD</p>
+  </div>
+  <div class="social-links">
+    <h3>Follow Us:</h3>
+    <a href="https://www.instagram.com/usagidetailing/" class="button">Instagram</a>
+  </div>
+  <div class="google-form">
+    <h3>Book an Appointment:</h3>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="button">Google Form</a>
+  </div>
+  <div class="contact-footer">
+    <img src="images/pic01.jpg" alt="Usagi Detailing Logo">
+  </div>
+</section>
 
-    <div class="contact-info">
-      <p><strong>📞 Phone:</strong> <a href="tel:+16673454637">1-667-345-4637</a></p>
-      <p><strong>📧 Email:</strong> <a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
-      <p><strong>📍 Address:</strong> 1234 Somewhere Road, Baltimore, MD</p>
-    </div>
-
-    <div class="social-links">
-      <h3>Follow Us:</h3>
-      <a href="https://www.instagram.com/usagidetailing/" class="button">Instagram</a>
-    </div>
-
-    <div class="google-form">
-      <h3>Book an Appointment:</h3>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform" class="button">Google Form</a>
-    </div>
-
-    <div class="contact-footer">
-      <img src="images/pic01.jpg" alt="Usagi Detailing Logo">
-    </div>
-  </section>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+  }
+</script>
 
 </body>
 </html>
+
+  
