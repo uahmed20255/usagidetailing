@@ -4,6 +4,7 @@
   <title>Basic Detailing Package - Usagi Detailing</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -16,19 +17,20 @@
       justify-content: space-between;
       align-items: center;
       padding: 1em 2em;
+      background: rgba(10,10,10,0.9);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
+    .logo img {
+      height: 50px;
     }
     nav ul {
       list-style: none;
       display: flex;
       gap: 1.5em;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
     nav ul li a {
       color: #fff;
@@ -41,34 +43,9 @@
     }
     .menu-toggle {
       display: none;
-      flex-direction: column;
+      font-size: 1.8rem;
       cursor: pointer;
-    }
-    .menu-toggle span {
-      background: #fff;
-      height: 3px;
-      width: 25px;
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: rgba(0, 0, 0, 0.9);
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        padding: 1em;
-        border-radius: 0 0 0 10px;
-      }
-      nav ul.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
-      }
+      color: #fff;
     }
     .intro {
       text-align: center;
@@ -83,62 +60,92 @@
       letter-spacing: 2px;
       font-weight: 600;
     }
+    .intro p {
+      font-style: italic;
+      color: #ccc;
+      margin: 1em 0 2em;
+      font-size: 1.1rem;
+    }
     .service-details {
-      max-width: 1000px;
+      max-width: 900px;
       margin: 2em auto;
-      padding: 2em;
-      background: #000;
+      background: rgba(255,255,255,0.05);
       border-radius: 10px;
+      padding: 2em;
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
     .service-details h2 {
-      color: #ffa500;
-      margin-top: 1em;
+      color: #ffc107;
     }
     .service-details ul {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      padding: 0;
+      margin: 1em 0;
       list-style: none;
+      padding: 0;
     }
     .service-details ul li {
-      background-color: #1a1a1a;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    }
-    .posts {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2em;
-      padding: 2em;
-    }
-    .posts article {
       background: #000;
       padding: 1em;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 0.95rem;
     }
-    .posts article img {
+    .before-after {
+      max-width: 900px;
+      margin: 2em auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .before-after img {
       width: 100%;
-      height: auto;
       border-radius: 10px;
-      object-fit: cover;
-      aspect-ratio: 4/3;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .before-after div {
+      text-align: center;
     }
     footer {
-      background: #111;
-      text-align: center;
-      padding: 2em 1em;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      padding: 2em;
+      background: #0a0a0a;
+      color: #ccc;
     }
-    footer h3 {
+    footer section h3 {
+      color: #ffc107;
+    }
+    footer a {
       color: #ffa500;
+      text-decoration: none;
     }
-    @media (max-width: 700px) {
-      .service-details ul {
-        grid-template-columns: 1fr;
+    footer a:hover {
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background: rgba(10,10,10,0.95);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        border-radius: 8px;
+        padding: 1em;
+        display: none;
       }
+      nav ul.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .service-details ul { grid-template-columns: 1fr; }
+      .before-after { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -146,18 +153,15 @@
 
 <header>
   <a href="index.html" class="logo">
-  <img src="images/pic01.jpg" alt="Usagi Detailing Logo" style="height: 50px;"></a>
-  <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    <img src="images/pic01.jpg" alt="Usagi Detailing Logo">
+  </a>
+  <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
   <nav>
-    <ul>
+    <ul id="nav-list">
       <li><a href="index.html">About Us</a></li>
       <li><a href="generic.html">Gallery</a></li>
       <li><a href="elements.html">Contact Us</a></li>
-      <li><a href="basic.html">Basic Package</a></li>
+      <li class="active"><a href="basic.html">Basic Package</a></li>
       <li><a href="full.html">Full Package</a></li>
       <li><a href="premium.html">Premium Package</a></li>
       <li><a href="extra.html">Ceramic Coating</a></li>
@@ -167,15 +171,12 @@
 </header>
 
 <section class="intro">
-  <h1>USAGI DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
+  <h1>USAGI<br>DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
   <p>Essential care for your vehicle to keep it fresh and well-maintained.</p>
 </section>
 
 <section class="service-details">
   <h2>Basic Detailing Package</h2>
-  <p>Our Basic Detailing Package provides essential cleaning and care for both the interior and exterior of your vehicle. Perfect for regular maintenance to keep your car looking fresh and well-maintained.</p>
-
-  <h2>What's Included:</h2>
   <ul>
     <li><strong>Exterior Wash & Dry:</strong> Hand wash and dry to remove dirt and grime.</li>
     <li><strong>Tire & Wheel Cleaning:</strong> Shine and clean tires and wheels.</li>
@@ -184,7 +185,6 @@
     <li><strong>Dashboard & Console Cleaning:</strong> Wipe down and polish hard surfaces.</li>
     <li><strong>Window & Mirror Cleaning:</strong> Crystal-clear glass cleaning.</li>
   </ul>
-
   <h2>Starting Prices:</h2>
   <ul>
     <li><strong>Sedans:</strong> Starting at $75</li>
@@ -192,29 +192,37 @@
   </ul>
 </section>
 
-<section class="posts">
-  <article>
-    <h2>Before: Basic Cleaning</h2>
+<section class="before-after">
+  <div>
+    <h3>Before</h3>
     <img src="images/beforeint.png" alt="Before interior cleaning">
-    <p>Customer's interior hadn’t been cleaned in months. They chose the Basic Package to get the job done.</p>
-  </article>
-
-  <article>
-    <h2>After: Basic Cleaning</h2>
+  </div>
+  <div>
+    <h3>After</h3>
     <img src="images/afterint.png" alt="After interior cleaning">
-    <p>Interior looking as brand-new.</p>
-  </article>
+  </div>
 </section>
 
 <footer>
-  <h3>Contact Us</h3>
-  <p>Phone: <a href="#">(443) 272-9723</a> | Email: <a href="#">uahmed20255@gmail.com</a></p>
-  <p>Follow us on <a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
+  <section>
+    <h3>Phone</h3>
+    <p><a href="tel:+14432729723">(443) 272-9723</a></p>
+  </section>
+  <section>
+    <h3>Email</h3>
+    <p><a href="mailto:uaahmed20255@gmail.com">uaahmed20255@gmail.com</a></p>
+  </section>
+  <section>
+    <h3>Social</h3>
+    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
+  </section>
 </footer>
 
 <script>
-  document.querySelector('.menu-toggle').addEventListener('click', function() {
-    document.querySelector('nav ul').classList.toggle('active');
+  const menuToggle = document.getElementById('menu-toggle');
+  const navList = document.getElementById('nav-list');
+  menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('show');
   });
 </script>
 
