@@ -3,7 +3,7 @@
 <head>
   <title>Usagi Detailing</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
@@ -131,7 +131,9 @@
       color: #333;
     }
     .card .button {
-      margin-bottom: 1em;
+      margin: 1em auto; /* Center button horizontally */
+      display: block;    /* Ensure button doesn't stretch */
+      width: fit-content;
     }
 
     /* Responsive Navbar */
