@@ -18,11 +18,9 @@
       padding: 1em 2em;
       background: rgba(0, 0, 0, 0.7);
     }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #fff;
-      text-decoration: none;
+    .logo img {
+      height: 50px;
+      border-radius: 50%;
     }
     nav ul {
       list-style: none;
@@ -82,26 +80,52 @@
       letter-spacing: 2px;
       font-weight: 600;
     }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 2em;
-      max-width: 1200px;
-      margin: 0 auto;
+
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 2em auto;
     }
-    .gallery img {
-      width: 100%;
+    .carousel {
+      display: flex;
+      overflow-x: scroll;
+      scroll-behavior: smooth;
+      gap: 1em;
+      padding: 1em;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel img {
+      height: 300px;
       border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
       object-fit: cover;
-      aspect-ratio: 4 / 3;
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     }
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.25em 0.5em;
+      z-index: 2;
+      border-radius: 5px;
     }
+    .arrow.left {
+      left: 10px;
+    }
+    .arrow.right {
+      right: 10px;
+    }
+
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -126,8 +150,7 @@
 <body>
 
 <header>
- <a href="index.html" class="logo">
-  <img src="images/pic01.jpg" alt="Usagi Detailing Logo" style="height: 50px;"></a>
+  <a href="index.html" class="logo"><img src="images/pic01.jpg" alt="Usagi Detailing Logo"></a>
   <div class="menu-toggle" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -152,16 +175,20 @@
   <p>Check out our gallery of recent details!</p>
 </section>
 
-<div class="gallery">
-  <img src="images/IMG_1356.jpg" alt="Interior detailing">
-  <img src="images/IMG_1357.jpg" alt="Sedan exterior clean">
-  <img src="images/IMG_1358.jpg" alt="Tire and wheel close-up">
-  <img src="images/IMG_1359.jpg" alt="Blue BMW exterior">
-  <img src="images/IMG_1361.jpg" alt="Foam wash on BMW">
-  <img src="images/IMG_1363.jpg" alt="SUV foam wash">
-  <img src="images/IMG_1364.jpg" alt="Red minivan cleaning">
-  <img src="images/IMG_1360.jpg" alt="Foamy wheel close-up">
-  <img src="images/afterint.png" alt="Interior finish">
+<div class="carousel-container">
+  <button class="arrow left" onclick="scrollGallery(-1)">&#8249;</button>
+  <div class="carousel" id="carousel">
+    <img src="images/IMG_1356.jpg" alt="Interior detailing">
+    <img src="images/IMG_1357.jpg" alt="Sedan exterior clean">
+    <img src="images/IMG_1358.jpg" alt="Tire and wheel close-up">
+    <img src="images/IMG_1359.jpg" alt="Blue BMW exterior">
+    <img src="images/IMG_1361.jpg" alt="Foam wash on BMW">
+    <img src="images/IMG_1363.jpg" alt="SUV foam wash">
+    <img src="images/IMG_1364.jpg" alt="Red minivan cleaning">
+    <img src="images/IMG_1360.jpg" alt="Foamy wheel close-up">
+    <img src="images/afterint.png" alt="Interior finish">
+  </div>
+  <button class="arrow right" onclick="scrollGallery(1)">&#8250;</button>
 </div>
 
 <footer>
@@ -183,6 +210,12 @@
   function toggleMenu() {
     const menu = document.getElementById('menu');
     menu.classList.toggle('active');
+  }
+
+  function scrollGallery(direction) {
+    const container = document.getElementById('carousel');
+    const scrollAmount = 500;
+    container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
   }
 </script>
 
