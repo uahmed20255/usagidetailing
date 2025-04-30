@@ -96,20 +96,23 @@
       color: #fff;
       font-size: 0.95rem;
     }
-    .before-after {
-      max-width: 900px;
+    .before-after-slider {
+      max-width: 1000px;
       margin: 2em auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      overflow-x: auto;
+      display: flex;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
       gap: 20px;
+      padding: 1em;
     }
-    .before-after img {
+    .before-after-slider img {
+      scroll-snap-align: start;
       width: 100%;
+      max-width: 500px;
       border-radius: 10px;
+      flex-shrink: 0;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-    .before-after div {
-      text-align: center;
     }
     footer {
       display: flex;
@@ -148,7 +151,6 @@
         display: block;
       }
       .service-details ul { grid-template-columns: 1fr; }
-      .before-after { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -198,15 +200,9 @@
   </ul>
 </section>
 
-<section class="before-after">
-  <div>
-    <h3></h3>
-    <img src="images/IMG_1356.jpg" alt="Before Full Cleaning">
-  </div>
-  <div>
-    <h3></h3>
-    <img src="images/IMG_1445.jpg" alt="After Full Cleaning">
-  </div>
+<section class="before-after-slider">
+  <img src="images/IMG_1356.jpg" alt="Before Full Cleaning">
+  <img src="images/IMG_1445.jpg" alt="After Full Cleaning">
 </section>
 
 <footer>
