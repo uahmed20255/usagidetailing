@@ -93,18 +93,20 @@
       scroll-behavior: smooth;
       gap: 1em;
       padding: 1em;
+      scroll-snap-type: x mandatory;
     }
     .carousel::-webkit-scrollbar {
       display: none;
     }
     .carousel img {
-      height: 300px;
-      border-radius: 10px;
-      object-fit: cover;
-      flex-shrink: 0;
       width: 100%;
       max-width: 500px;
+      height: 300px;
+      flex-shrink: 0;
+      object-fit: cover;
+      border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      scroll-snap-align: center;
     }
     .arrow {
       position: absolute;
@@ -214,8 +216,8 @@
 
   function scrollGallery(direction) {
     const container = document.getElementById('carousel');
-    const scrollAmount = 500;
-    container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+    const imageWidth = container.querySelector('img').offsetWidth + 16; // 16px = gap
+    container.scrollBy({ left: direction * imageWidth, behavior: 'smooth' });
   }
 </script>
 
