@@ -118,9 +118,10 @@
     }
     .slide img {
       width: 100%;
-      max-width: 700px;
-      height: auto;
+      max-width: 500px;
+      height: 300px;
       border-radius: 10px;
+      object-fit: cover;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
     .arrow {
@@ -266,7 +267,7 @@
 
   function scrollSlider(direction) {
     const slider = document.getElementById('slider');
-    const slideWidth = slider.clientWidth;
+    const slideWidth = slider.offsetWidth;
     slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
   }
 </script>
