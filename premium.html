@@ -3,12 +3,12 @@
 <head>
   <title>Premium Package - Usagi Detailing</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
+      background: radial-gradient(circle at center, #0a0a0a, #1a1a1a);
       color: #fff;
     }
     header {
@@ -26,8 +26,8 @@
       list-style: none;
       display: flex;
       gap: 1.5em;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
     nav ul li a {
       color: #fff;
@@ -40,33 +40,8 @@
     }
     .menu-toggle {
       display: none;
-      flex-direction: column;
-      cursor: pointer;
     }
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: #fff;
-      margin: 4px 0;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: #111;
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        border-radius: 8px;
-        padding: 1em;
-      }
-      nav ul.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
-      }
-    }
+
     .intro {
       text-align: center;
       padding: 3em 1em 1em;
@@ -80,6 +55,7 @@
       letter-spacing: 2px;
       font-weight: 600;
     }
+
     .content {
       max-width: 1000px;
       margin: 2em auto;
@@ -120,24 +96,20 @@
 
     .slider-container {
       position: relative;
-      max-width: 600px;
+      max-width: 550px;
       margin: 3em auto;
       overflow: hidden;
+      border-radius: 12px;
     }
-    .slider-wrapper {
+    .slider-track {
       display: flex;
-      transition: transform 0.4s ease-in-out;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      overflow-x: auto;
-    }
-    .slider-wrapper::-webkit-scrollbar {
-      display: none;
+      transition: transform 0.4s ease;
     }
     .slide {
       flex: 0 0 100%;
-      scroll-snap-align: center;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .slide img {
       width: 500px;
@@ -150,22 +122,19 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
+      background: rgba(0,0,0,0.6);
+      color: white;
       border: none;
       font-size: 2rem;
-      padding: 0.5em 0.75em;
+      padding: 0.5em;
       cursor: pointer;
-      z-index: 10;
+      z-index: 5;
       border-radius: 50%;
     }
-    .arrow:hover {
-      background: rgba(255, 165, 0, 0.8);
-    }
-    .arrow-left {
+    .arrow.left {
       left: 10px;
     }
-    .arrow-right {
+    .arrow.right {
       right: 10px;
     }
 
@@ -193,14 +162,11 @@
 <body>
 
 <header>
-  <a href="index.html" class="logo"><img src="images/pic01.jpg" alt="Usagi Detailing Logo"></a>
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <a href="index.html" class="logo">
+    <img src="images/pic01.jpg" alt="Usagi Detailing Logo">
+  </a>
   <nav>
-    <ul id="menu">
+    <ul>
       <li><a href="index.html">About Us</a></li>
       <li><a href="generic.html">Gallery</a></li>
       <li><a href="elements.html">Contact Us</a></li>
@@ -241,15 +207,15 @@
   </ul>
 </div>
 
-<!-- Image Slider Section -->
+<!-- SLIDER SECTION -->
 <div class="slider-container">
-  <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
-  <div class="slider-wrapper" id="slider">
+  <button class="arrow left" onclick="changeSlide(-1)">‹</button>
+  <div class="slider-track" id="slider">
     <div class="slide"><img src="images/aftertire.png" alt="Tire Finish"></div>
-    <div class="slide"><img src="images/afterint.png" alt="Clean Interior"></div>
+    <div class="slide"><img src="images/afterint.png" alt="Interior Clean"></div>
     <div class="slide"><img src="images/IMG_1437.jpg" alt="Engine Bay"></div>
   </div>
-  <button class="arrow arrow-right" onclick="scrollSlider(1)">›</button>
+  <button class="arrow right" onclick="changeSlide(1)">›</button>
 </div>
 
 <footer>
@@ -268,16 +234,14 @@
 </footer>
 
 <script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.classList.toggle('active');
-  }
-
-  function scrollSlider(direction) {
+  let currentIndex = 0;
+  function changeSlide(direction) {
     const slider = document.getElementById('slider');
-    const slide = slider.querySelector('.slide');
-    const slideWidth = slide.offsetWidth;
-    slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+    const totalSlides = slider.children.length;
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex >= totalSlides) currentIndex = totalSlides - 1;
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
   }
 </script>
 
