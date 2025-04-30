@@ -119,6 +119,22 @@
       background: #fff;
       color: #000;
     }
+    .image-gallery {
+      max-width: 1000px;
+      margin: 2em auto;
+      padding: 1em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5em;
+    }
+    .image-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+      object-fit: cover;
+      aspect-ratio: 4/3;
+    }
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -146,7 +162,6 @@
   <a href="index.html" class="logo">
   <img src="images/pic01.jpg" alt="Usagi Detailing Logo" style="height: 50px;"></a>
 
- 
   <div class="menu-toggle" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -194,6 +209,13 @@
   </ul>
 </div>
 
+<section class="image-gallery">
+  <img src="images/aftertire.png" alt="Detailed Tire Finish">
+  <img src="images/afterint.png" alt="Clean Interior">
+  <img src="images/afterengine.png" alt="Shiny Engine Bay">
+  <img src="images/afterfull.png" alt="Premium Exterior Clean">
+</section>
+
 <footer>
   <section>
     <h3>Phone</h3>
@@ -218,5 +240,4 @@
 
 </body>
 </html>
-
 
