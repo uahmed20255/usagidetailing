@@ -100,20 +100,26 @@
       margin: 2em auto;
       overflow: hidden;
     }
-    .slider {
+    .slider-wrapper {
       display: flex;
-      transition: transform 0.3s ease-in-out;
+      transition: transform 0.4s ease-in-out;
       scroll-behavior: smooth;
-      overflow-x: auto;
       scroll-snap-type: x mandatory;
+      overflow-x: auto;
+    }
+    .slider-wrapper::-webkit-scrollbar {
+      display: none;
     }
     .slide {
       flex: 0 0 100%;
       scroll-snap-align: center;
-      padding: 0 10px;
+      padding: 1em;
+      text-align: center;
     }
     .slide img {
       width: 100%;
+      max-width: 700px;
+      height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
@@ -121,17 +127,22 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
       border: none;
-      padding: 0.5em 1em;
+      font-size: 2rem;
+      padding: 0.5em 0.75em;
       cursor: pointer;
       z-index: 10;
+      border-radius: 50%;
     }
-    .arrow.left {
+    .arrow:hover {
+      background: rgba(255, 165, 0, 0.8);
+    }
+    .arrow-left {
       left: 10px;
     }
-    .arrow.right {
+    .arrow-right {
       right: 10px;
     }
     footer {
@@ -220,13 +231,15 @@
   </ul>
 </section>
 
+<!-- Image Slider Section -->
 <div class="slider-container">
-  <button class="arrow left" onclick="scrollSlider(-1)">&#10094;</button>
-  <div class="slider" id="imageSlider">
-    <div class="slide"><img src="images/IMG_1356.jpg" alt="Before"></div>
-    <div class="slide"><img src="images/IMG_1445.jpg" alt="After"></div>
+  <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
+  <div class="slider-wrapper" id="slider">
+    <div class="slide"><img src="images/IMG_1356.jpg" alt="Before Full Cleaning"></div>
+    <div class="slide"><img src="images/IMG_1445.jpg" alt="After Full Cleaning"></div>
+    <div class="slide"><img src="images/afterint.png" alt="Interior Finish"></div>
   </div>
-  <button class="arrow right" onclick="scrollSlider(1)">&#10095;</button>
+  <button class="arrow arrow-right" onclick="scrollSlider(1)">›</button>
 </div>
 
 <footer>
@@ -240,7 +253,7 @@
   </section>
   <section>
     <h3>Social</h3>
-    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
+    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform">Google Form</a></p>
   </section>
 </footer>
 
@@ -252,7 +265,7 @@
   });
 
   function scrollSlider(direction) {
-    const slider = document.getElementById('imageSlider');
+    const slider = document.getElementById('slider');
     const slideWidth = slider.clientWidth;
     slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
   }
