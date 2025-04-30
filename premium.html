@@ -4,6 +4,7 @@
   <title>Premium Package - Usagi Detailing</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -18,11 +19,9 @@
       padding: 1em 2em;
       background: rgba(0, 0, 0, 0.7);
     }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #fff;
-      text-decoration: none;
+    .logo img {
+      height: 50px;
+      border-radius: 50%;
     }
     nav ul {
       list-style: none;
@@ -119,21 +118,56 @@
       background: #fff;
       color: #000;
     }
-    .image-gallery {
-      max-width: 1000px;
+    .slider-container {
+      position: relative;
+      max-width: 900px;
       margin: 2em auto;
-      padding: 1em;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5em;
+      overflow: hidden;
     }
-    .image-gallery img {
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+    }
+    .slider-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      padding: 1em;
+      text-align: center;
+    }
+    .slide img {
       width: 100%;
+      max-width: 700px;
       height: auto;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
-      object-fit: cover;
-      aspect-ratio: 4/3;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5em 0.75em;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 50%;
+    }
+    .arrow:hover {
+      background: rgba(255, 165, 0, 0.8);
+    }
+    .arrow-left {
+      left: 10px;
+    }
+    .arrow-right {
+      right: 10px;
     }
     footer {
       display: flex;
@@ -161,7 +195,6 @@
 <header>
   <a href="index.html" class="logo">
   <img src="images/pic01.jpg" alt="Usagi Detailing Logo" style="height: 50px;"></a>
-
   <div class="menu-toggle" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -209,12 +242,16 @@
   </ul>
 </div>
 
-<section class="image-gallery">
-  <img src="images/aftertire.png" alt="Detailed Tire Finish">
-  <img src="images/afterint.png" alt="Clean Interior">
-  <img src="images/IMG_1437.jpg" alt="Shiny Engine Bay">
- 
-</section>
+<!-- Image Slider -->
+<div class="slider-container">
+  <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
+  <div class="slider-wrapper" id="slider">
+    <div class="slide"><img src="images/aftertire.png" alt="Detailed Tire Finish"></div>
+    <div class="slide"><img src="images/afterint.png" alt="Clean Interior"></div>
+    <div class="slide"><img src="images/IMG_1437.jpg" alt="Shiny Engine Bay"></div>
+  </div>
+  <button class="arrow arrow-right" onclick="scrollSlider(1)">›</button>
+</div>
 
 <footer>
   <section>
@@ -236,8 +273,13 @@
     const menu = document.getElementById('menu');
     menu.classList.toggle('active');
   }
+
+  function scrollSlider(direction) {
+    const slider = document.getElementById('slider');
+    const slideWidth = slider.clientWidth;
+    slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+  }
 </script>
 
 </body>
 </html>
-
