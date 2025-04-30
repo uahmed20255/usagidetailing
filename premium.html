@@ -4,7 +4,6 @@
   <title>Premium Package - Usagi Detailing</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
       margin: 0;
@@ -118,10 +117,11 @@
       background: #fff;
       color: #000;
     }
+
     .slider-container {
       position: relative;
-      max-width: 900px;
-      margin: 2em auto;
+      max-width: 600px;
+      margin: 3em auto;
       overflow: hidden;
     }
     .slider-wrapper {
@@ -137,13 +137,12 @@
     .slide {
       flex: 0 0 100%;
       scroll-snap-align: center;
-      padding: 1em;
       text-align: center;
     }
     .slide img {
-      width: 100%;
-      max-width: 700px;
-      height: auto;
+      width: 500px;
+      height: 300px;
+      object-fit: cover;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
@@ -169,6 +168,7 @@
     .arrow-right {
       right: 10px;
     }
+
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -193,8 +193,7 @@
 <body>
 
 <header>
-  <a href="index.html" class="logo">
-  <img src="images/pic01.jpg" alt="Usagi Detailing Logo" style="height: 50px;"></a>
+  <a href="index.html" class="logo"><img src="images/pic01.jpg" alt="Usagi Detailing Logo"></a>
   <div class="menu-toggle" onclick="toggleMenu()">
     <div></div>
     <div></div>
@@ -242,13 +241,13 @@
   </ul>
 </div>
 
-<!-- Image Slider -->
+<!-- Image Slider Section -->
 <div class="slider-container">
   <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
   <div class="slider-wrapper" id="slider">
-    <div class="slide"><img src="images/aftertire.png" alt="Detailed Tire Finish"></div>
+    <div class="slide"><img src="images/aftertire.png" alt="Tire Finish"></div>
     <div class="slide"><img src="images/afterint.png" alt="Clean Interior"></div>
-    <div class="slide"><img src="images/IMG_1437.jpg" alt="Shiny Engine Bay"></div>
+    <div class="slide"><img src="images/IMG_1437.jpg" alt="Engine Bay"></div>
   </div>
   <button class="arrow arrow-right" onclick="scrollSlider(1)">›</button>
 </div>
@@ -276,7 +275,8 @@
 
   function scrollSlider(direction) {
     const slider = document.getElementById('slider');
-    const slideWidth = slider.clientWidth;
+    const slide = slider.querySelector('.slide');
+    const slideWidth = slide.offsetWidth;
     slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
   }
 </script>
