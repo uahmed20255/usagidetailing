@@ -94,41 +94,57 @@
       color: #fff;
       font-size: 0.95rem;
     }
-    .image-toggle-section {
+    .slider-container {
+      position: relative;
+      max-width: 700px;
       margin: 2em auto;
+      overflow: hidden;
+    }
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+    }
+    .slider-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      padding: 1em;
       text-align: center;
     }
-    .image-toggle-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5em;
-      max-width: 95vw;
-      margin: 0 auto;
-    }
-    .image-toggle-container img {
+    .slide img {
       width: 100%;
-      max-width: 300px;
+      max-width: 350px;
       height: auto;
       border-radius: 10px;
+      object-fit: cover;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-    @media (min-width: 769px) {
-      .image-toggle-container img {
-        max-width: 400px;
-      }
-    }
     .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
       background: rgba(255, 255, 255, 0.1);
       color: #fff;
       border: none;
-      font-size: 1.5rem;
+      font-size: 2rem;
+      padding: 0.5em 0.75em;
       cursor: pointer;
+      z-index: 10;
       border-radius: 50%;
-      padding: 0.25em 0.45em;
     }
     .arrow:hover {
       background: rgba(255, 165, 0, 0.8);
+    }
+    .arrow-left {
+      left: 10px;
+    }
+    .arrow-right {
+      right: 10px;
     }
     footer {
       display: flex;
@@ -166,9 +182,7 @@
       .menu-toggle {
         display: block;
       }
-      .service-details ul {
-        grid-template-columns: 1fr;
-      }
+      .service-details ul { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -176,8 +190,7 @@
 
 <header>
   <a href="index.html" class="logo">
-    <img src="images/pic01.jpg" alt="Usagi Detailing Logo">
-  </a>
+  <img src="images/pic01.jpg" alt="Usagi Detailing Logo" style="height: 50px;"></a>
   <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
   <nav>
     <ul id="nav-list">
@@ -219,12 +232,14 @@
   </ul>
 </section>
 
-<div class="image-toggle-section">
-  <div class="image-toggle-container">
-    <button class="arrow" onclick="toggleImage('full')">‹</button>
-    <img id="full" src="images/IMG_1356.jpg" alt="Before Full Detailing">
-    <button class="arrow" onclick="toggleImage('full')">›</button>
+<div class="slider-container">
+  <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
+  <div class="slider-wrapper" id="slider">
+    <div class="slide"><img src="images/IMG_1356.jpg" alt="Before Full Cleaning"></div>
+    <div class="slide"><img src="images/IMG_1445.jpg" alt="After Full Cleaning"></div>
+    <div class="slide"><img src="images/afterint.png" alt="Interior Finish"></div>
   </div>
+  <button class="arrow arrow-right" onclick="scrollSlider(1)">›</button>
 </div>
 
 <footer>
@@ -238,7 +253,7 @@
   </section>
   <section>
     <h3>Social</h3>
-    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
+    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform">Google Form</a></p>
   </section>
 </footer>
 
@@ -249,14 +264,10 @@
     navList.classList.toggle('show');
   });
 
-  const images = {
-    full: ["images/IMG_1356.jpg", "images/IMG_1445.jpg"]
-  };
-  const currentIndex = { full: 0 };
-
-  function toggleImage(id) {
-    currentIndex[id] = 1 - currentIndex[id];
-    document.getElementById(id).src = images[id][currentIndex[id]];
+  function scrollSlider(direction) {
+    const slider = document.getElementById('slider');
+    const slideWidth = slider.offsetWidth;
+    slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
   }
 </script>
 
