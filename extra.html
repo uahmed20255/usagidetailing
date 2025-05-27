@@ -1,3 +1,4 @@
+<!-- Paste this HTML into your extra.html -->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -22,11 +23,9 @@
       top: 0;
       z-index: 1000;
     }
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: #fff;
-      text-decoration: none;
+    .logo img {
+      height: 50px;
+      border-radius: 50%;
     }
     nav ul {
       list-style: none;
@@ -63,13 +62,6 @@
       letter-spacing: 2px;
       font-weight: 600;
     }
-    .subtitle {
-      font-size: 1.8rem;
-      color: #ffa500;
-      margin-top: 0.5em;
-      letter-spacing: 1px;
-      font-weight: 500;
-    }
     .intro p {
       font-style: italic;
       color: #ccc;
@@ -103,20 +95,57 @@
       color: #fff;
       font-size: 0.95rem;
     }
-    .before-after {
+    .slider-container {
+      position: relative;
       max-width: 900px;
       margin: 2em auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      overflow: hidden;
     }
-    .before-after img {
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+    }
+    .slider-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      padding: 1em;
+      text-align: center;
+    }
+    .slide img {
       width: 100%;
+      max-width: 500px;
+      height: 300px;
       border-radius: 10px;
+      object-fit: cover;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-    .before-after div {
-      text-align: center;
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5em 0.75em;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 50%;
+    }
+    .arrow:hover {
+      background: rgba(255, 165, 0, 0.8);
+    }
+    .arrow-left {
+      left: 10px;
+    }
+    .arrow-right {
+      right: 10px;
     }
     footer {
       display: flex;
@@ -155,7 +184,6 @@
         display: block;
       }
       .service-details ul { grid-template-columns: 1fr; }
-      .before-after { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -180,8 +208,7 @@
 </header>
 
 <section class="intro">
-  <h1>USAGI DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
-  <h2 class="subtitle">Ceramic Coatings</h2>
+  <h1>USAGI<br>DETAILING<br><span class="highlight">OWN THE NIGHT</span></h1>
   <p>Unmatched protection for your vehicle.</p>
 </section>
 
@@ -201,24 +228,17 @@
   </ul>
 </section>
 
-<section class="before-after">
-  <div>
-    <h3>Before: Engine Bay Cleaning</h3>
-    <img src="images/IMG_3222.jpg" alt="Before Engine Bay Cleaning">
+<!-- Image Slider Section -->
+<div class="slider-container">
+  <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
+  <div class="slider-wrapper" id="slider">
+    <div class="slide"><img src="images/IMG_3222.jpg" alt="Before Engine Bay Cleaning"></div>
+    <div class="slide"><img src="images/afterengine.png" alt="After Engine Bay Cleaning"></div>
+    <div class="slide"><img src="images/beforeheadlight.png" alt="Before Headlight Restoration"></div>
+    <div class="slide"><img src="images/afterheadlight.png" alt="After Headlight Restoration"></div>
   </div>
-  <div>
-    <h3>After: Engine Bay Cleaning</h3>
-    <img src="images/afterengine.png" alt="After Engine Bay Cleaning">
-  </div>
-  <div>
-    <h3>Before: Headlight Restoration</h3>
-    <img src="images/beforeheadlight.png" alt="Before Headlight Restoration">
-  </div>
-  <div>
-    <h3>After: Headlight Restoration</h3>
-    <img src="images/afterheadlight.png" alt="After Headlight Restoration">
-  </div>
-</section>
+  <button class="arrow arrow-right" onclick="scrollSlider(1)">›</button>
+</div>
 
 <footer>
   <section>
@@ -241,6 +261,12 @@
   menuToggle.addEventListener('click', () => {
     navList.classList.toggle('show');
   });
+
+  function scrollSlider(direction) {
+    const slider = document.getElementById('slider');
+    const slideWidth = slider.offsetWidth;
+    slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+  }
 </script>
 
 </body>
