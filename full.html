@@ -118,8 +118,8 @@
     }
     .slide img {
       width: 100%;
-      max-width: 350px;
-      height: auto;
+      max-width: 400px;
+      height: 250px;
       border-radius: 10px;
       object-fit: cover;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -182,7 +182,9 @@
       .menu-toggle {
         display: block;
       }
-      .service-details ul { grid-template-columns: 1fr; }
+      .service-details ul {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -190,7 +192,8 @@
 
 <header>
   <a href="index.html" class="logo">
-  <img src="images/pic01.jpg" alt="Usagi Detailing Logo" style="height: 50px;"></a>
+    <img src="images/pic01.jpg" alt="Usagi Detailing Logo" style="height: 50px;">
+  </a>
   <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
   <nav>
     <ul id="nav-list">
@@ -232,6 +235,7 @@
   </ul>
 </section>
 
+<!-- Image Slider Section -->
 <div class="slider-container">
   <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
   <div class="slider-wrapper" id="slider">
@@ -253,7 +257,7 @@
   </section>
   <section>
     <h3>Social</h3>
-    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform">Google Form</a></p>
+    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
   </section>
 </footer>
 
