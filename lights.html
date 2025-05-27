@@ -118,8 +118,8 @@
     }
     .slide img {
       width: 100%;
-      max-width: 500px;
-      height: 300px;
+      height: auto;
+      max-width: 100%;
       border-radius: 10px;
       object-fit: cover;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -171,6 +171,7 @@
     footer a:hover {
       text-decoration: underline;
     }
+
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -190,6 +191,13 @@
       }
       .service-details ul {
         grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .slide img {
+        max-width: 500px;
+        height: 300px;
       }
     }
   </style>
@@ -260,14 +268,13 @@
 <div class="slider-container">
   <button class="arrow arrow-left" onclick="scrollSlider(2, -1)">‹</button>
   <div class="slider-wrapper" id="slider2">
-    
     <div class="slide">
       <h3>Before</h3>
-      <img src="images/IMG_3223.jpg" alt="Before Detail 4">
+      <img src="images/IMG_3223.jpg" alt="Before Detail 2">
     </div>
     <div class="slide">
       <h3>After</h3>
-      <img src="images/IMG_3224.jpg" alt="After Detail 4">
+      <img src="images/IMG_3224.jpg" alt="After Detail 2">
     </div>
   </div>
   <button class="arrow arrow-right" onclick="scrollSlider(2, 1)">›</button>
