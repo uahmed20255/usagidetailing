@@ -1,9 +1,9 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
   <title>Headlight Restoration - Usagi Detailing</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
@@ -37,7 +37,6 @@
       color: #fff;
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s ease;
     }
     nav ul li a:hover {
       color: #ffa500;
@@ -82,7 +81,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      margin: 1em 0;
       list-style: none;
       padding: 0;
     }
@@ -90,26 +88,25 @@
       background: #000;
       padding: 1em;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
       color: #fff;
-      font-size: 0.95rem;
     }
 
-    /* Image Toggle Styling */
     .image-toggle-section {
+      margin: 2em auto;
       text-align: center;
-      margin: 3em auto;
     }
     .image-toggle-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1em;
+      gap: 0.5em;
       flex-wrap: nowrap;
+      max-width: 95vw;
+      margin: 0 auto;
     }
     .image-toggle-container img {
-      width: 90vw;
-      max-width: 350px;
+      width: 100%;
+      max-width: 300px;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -118,10 +115,10 @@
       background: rgba(255, 255, 255, 0.1);
       color: #fff;
       border: none;
-      font-size: 2rem;
+      font-size: 1.5rem;
       cursor: pointer;
       border-radius: 50%;
-      padding: 0.3em 0.6em;
+      padding: 0.25em 0.45em;
     }
     .arrow:hover {
       background: rgba(255, 165, 0, 0.8);
@@ -146,7 +143,6 @@
     footer a:hover {
       text-decoration: underline;
     }
-
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -201,8 +197,8 @@
   <ul>
     <li><strong>Sanding:</strong> Removes oxidation and dirt buildup from headlights.</li>
     <li><strong>Polishing:</strong> Restores clarity and shine, eliminating haze.</li>
-    <li><strong>Spray-On Headlight Coating:</strong> Premium protection against oxidation and yellowing.</li>
-    <li><strong>Ceramic Coating:</strong> Budget-friendly option for clear, fade-resistant headlights.</li>
+    <li><strong>Spray-On Coating:</strong> Protects against oxidation and yellowing.</li>
+    <li><strong>Ceramic Coating:</strong> Budget-friendly clarity with added longevity.</li>
   </ul>
   <h2>Benefits:</h2>
   <ul>
@@ -216,22 +212,22 @@
   </ul>
 </section>
 
-<!-- First Toggle Image Section -->
+<!-- First Before/After Toggle -->
 <div class="image-toggle-section">
   <h3>Before / After</h3>
   <div class="image-toggle-container">
     <button class="arrow" onclick="toggleImage('pair1')">‹</button>
-    <img id="pair1" src="images/IMG_1443.jpg" alt="Before Headlight Restoration" />
+    <img id="pair1" src="images/IMG_1443.jpg" alt="Before">
     <button class="arrow" onclick="toggleImage('pair1')">›</button>
   </div>
 </div>
 
-<!-- Second Toggle Image Section -->
+<!-- Second Before/After Toggle -->
 <div class="image-toggle-section">
   <h3>Before / After</h3>
   <div class="image-toggle-container">
     <button class="arrow" onclick="toggleImage('pair2')">‹</button>
-    <img id="pair2" src="images/IMG_3223.jpg" alt="Before Headlight Restoration 2" />
+    <img id="pair2" src="images/IMG_3223.jpg" alt="Before">
     <button class="arrow" onclick="toggleImage('pair2')">›</button>
   </div>
 </div>
@@ -248,7 +244,7 @@
   <section>
     <h3>Social</h3>
     <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a> |
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform">Google Form</a></p>
+    <a href="https://forms.gle/xyz">Google Form</a></p>
   </section>
 </footer>
 
@@ -273,5 +269,3 @@
 
 </body>
 </html>
-
-
