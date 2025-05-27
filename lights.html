@@ -1,4 +1,4 @@
-or<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 <head>
   <title>Headlight Restoration - Usagi Detailing</title>
@@ -24,6 +24,7 @@ or<!DOCTYPE HTML>
     }
     .logo img {
       height: 50px;
+      border-radius: 50%;
     }
     nav ul {
       list-style: none;
@@ -93,20 +94,63 @@ or<!DOCTYPE HTML>
       color: #fff;
       font-size: 0.95rem;
     }
-    .before-after {
+    .slider-container {
+      position: relative;
       max-width: 900px;
       margin: 2em auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      overflow: hidden;
     }
-    .before-after img {
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      overflow-x: auto;
+    }
+    .slider-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      padding: 1em;
+      text-align: center;
+    }
+    .slide img {
       width: 100%;
+      max-width: 500px;
+      height: 300px;
       border-radius: 10px;
+      object-fit: cover;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-    .before-after div {
-      text-align: center;
+    .slide h3 {
+      margin: 0.5em 0 0;
+      font-size: 1.2rem;
+      color: #ffc107;
+      text-transform: uppercase;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5em 0.75em;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 50%;
+    }
+    .arrow:hover {
+      background: rgba(255, 165, 0, 0.8);
+    }
+    .arrow-left {
+      left: 10px;
+    }
+    .arrow-right {
+      right: 10px;
     }
     footer {
       display: flex;
@@ -144,8 +188,9 @@ or<!DOCTYPE HTML>
       .menu-toggle {
         display: block;
       }
-      .service-details ul { grid-template-columns: 1fr; }
-      .before-after { grid-template-columns: 1fr; }
+      .service-details ul {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -195,16 +240,21 @@ or<!DOCTYPE HTML>
   </ul>
 </section>
 
-<section class="before-after">
-  <div>
-    <h3>before:</h3>
-    <img src="images/IMG_1443.jpg" alt="Before Headlight Restoration">
+<!-- Image Slider with Before/After Labels -->
+<div class="slider-container">
+  <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
+  <div class="slider-wrapper" id="slider">
+    <div class="slide">
+      <h3>Before</h3>
+      <img src="images/IMG_1443.jpg" alt="Before Headlight Restoration">
+    </div>
+    <div class="slide">
+      <h3>After</h3>
+      <img src="images/IMG_1444.jpg" alt="After Headlight Restoration">
+    </div>
   </div>
-  <div>
-    <h3>after:</h3>
-    <img src="images/IMG_1444.jpg" alt="After Headlight Restoration">
-  </div>
-</section>
+  <button class="arrow arrow-right" onclick="scrollSlider(1)">›</button>
+</div>
 
 <footer>
   <section>
@@ -217,7 +267,8 @@ or<!DOCTYPE HTML>
   </section>
   <section>
     <h3>Social</h3>
-    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a> | <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform">Google Form</a></p>
+    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a> |
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform">Google Form</a></p>
   </section>
 </footer>
 
@@ -227,6 +278,12 @@ or<!DOCTYPE HTML>
   menuToggle.addEventListener('click', () => {
     navList.classList.toggle('show');
   });
+
+  function scrollSlider(direction) {
+    const slider = document.getElementById('slider');
+    const slideWidth = slider.offsetWidth;
+    slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+  }
 </script>
 
 </body>
