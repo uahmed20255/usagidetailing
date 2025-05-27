@@ -3,7 +3,7 @@
 <head>
   <title>Headlight Restoration - Usagi Detailing</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
@@ -94,43 +94,41 @@
       color: #fff;
       font-size: 0.95rem;
     }
+
     .slider-container {
-      position: relative;
-      max-width: 900px;
+      max-width: 100%;
       margin: 2em auto;
+      position: relative;
       overflow: hidden;
     }
     .slider-wrapper {
       display: flex;
-      transition: transform 0.4s ease-in-out;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
       overflow-x: auto;
-    }
-    .slider-wrapper::-webkit-scrollbar {
-      display: none;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
     }
     .slide {
       flex: 0 0 100%;
       scroll-snap-align: center;
-      padding: 1em;
       text-align: center;
+      padding: 1em;
     }
     .slide img {
-      width: 100%;
-      max-width: 320px;
-      height: 180px;
-      object-fit: cover;
+      width: 90vw;
+      max-width: 400px;
+      height: auto;
       border-radius: 10px;
+      object-fit: cover;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      margin: 0 auto;
     }
     .slide h3 {
-      margin: 0.5em 0 0;
+      margin-top: 0.5em;
       font-size: 1.2rem;
       color: #ffc107;
       text-transform: uppercase;
     }
+
     .arrow {
       position: absolute;
       top: 50%;
@@ -139,7 +137,7 @@
       color: #fff;
       border: none;
       font-size: 2rem;
-      padding: 0.5em 0.75em;
+      padding: 0.3em 0.6em;
       cursor: pointer;
       z-index: 10;
       border-radius: 50%;
@@ -148,11 +146,12 @@
       background: rgba(255, 165, 0, 0.8);
     }
     .arrow-left {
-      left: 10px;
+      left: 5px;
     }
     .arrow-right {
-      right: 10px;
+      right: 5px;
     }
+
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -172,6 +171,7 @@
     footer a:hover {
       text-decoration: underline;
     }
+
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -241,7 +241,7 @@
   </ul>
 </section>
 
-<!-- First Slider -->
+<!-- First Image Slider -->
 <div class="slider-container">
   <button class="arrow arrow-left" onclick="scrollSlider(1, -1)">‹</button>
   <div class="slider-wrapper" id="slider1">
@@ -257,7 +257,7 @@
   <button class="arrow arrow-right" onclick="scrollSlider(1, 1)">›</button>
 </div>
 
-<!-- Second Slider -->
+<!-- Second Image Slider -->
 <div class="slider-container">
   <button class="arrow arrow-left" onclick="scrollSlider(2, -1)">‹</button>
   <div class="slider-wrapper" id="slider2">
@@ -305,3 +305,4 @@
 
 </body>
 </html>
+
