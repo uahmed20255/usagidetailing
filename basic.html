@@ -24,6 +24,7 @@
     }
     .logo img {
       height: 50px;
+      border-radius: 50%;
     }
     nav ul {
       list-style: none;
@@ -93,21 +94,51 @@
       color: #fff;
       font-size: 0.95rem;
     }
-    .before-after {
-      max-width: 900px;
+
+    .slider-container {
+      position: relative;
+      max-width: 500px;
       margin: 2em auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
     }
-    .before-after img {
+
+    .slide-img {
       width: 100%;
+      height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      display: none;
     }
-    .before-after div {
-      text-align: center;
+
+    .slide-img.active {
+      display: block;
     }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      border: none;
+      font-size: 2rem;
+      padding: 0.5em 0.75em;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 50%;
+    }
+
+    .arrow-left {
+      left: -20px;
+    }
+
+    .arrow-right {
+      right: -20px;
+    }
+
+    .arrow:hover {
+      background: rgba(255, 165, 0, 0.8);
+    }
+
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -117,16 +148,20 @@
       background: #0a0a0a;
       color: #ccc;
     }
+
     footer section h3 {
       color: #ffc107;
     }
+
     footer a {
       color: #ffa500;
       text-decoration: none;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
+
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -144,8 +179,9 @@
       .menu-toggle {
         display: block;
       }
-      .service-details ul { grid-template-columns: 1fr; }
-      .before-after { grid-template-columns: 1fr; }
+      .service-details ul {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -192,16 +228,12 @@
   </ul>
 </section>
 
-<section class="before-after">
-  <div>
-    <h3>Before</h3>
-    <img src="images/beforeint.png" alt="Before interior cleaning">
-  </div>
-  <div>
-    <h3>After</h3>
-    <img src="images/afterint.png" alt="After interior cleaning">
-  </div>
-</section>
+<div class="slider-container">
+  <button class="arrow arrow-left" onclick="toggleSlide(-1)">‹</button>
+  <img src="images/beforeint.png" alt="Before Interior Cleaning" class="slide-img active" id="slide1">
+  <img src="images/afterint.png" alt="After Interior Cleaning" class="slide-img" id="slide2">
+  <button class="arrow arrow-right" onclick="toggleSlide(1)">›</button>
+</div>
 
 <footer>
   <section>
@@ -224,6 +256,15 @@
   menuToggle.addEventListener('click', () => {
     navList.classList.toggle('show');
   });
+
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide-img');
+
+  function toggleSlide(direction) {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + direction + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+  }
 </script>
 
 </body>
