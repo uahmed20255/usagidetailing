@@ -3,7 +3,7 @@
 <head>
   <title>Headlight Restoration - Usagi Detailing</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
@@ -95,61 +95,36 @@
       font-size: 0.95rem;
     }
 
-    .slider-container {
-      max-width: 100%;
-      margin: 2em auto;
-      position: relative;
-      overflow: hidden;
-    }
-    .slider-wrapper {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-    }
-    .slide {
-      flex: 0 0 100%;
-      scroll-snap-align: center;
+    /* Image Toggle Styling */
+    .image-toggle-section {
       text-align: center;
-      padding: 1em;
+      margin: 3em auto;
     }
-    .slide img {
+    .image-toggle-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+      flex-wrap: nowrap;
+    }
+    .image-toggle-container img {
       width: 90vw;
-      max-width: 400px;
+      max-width: 350px;
       height: auto;
       border-radius: 10px;
-      object-fit: cover;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
-    .slide h3 {
-      margin-top: 0.5em;
-      font-size: 1.2rem;
-      color: #ffc107;
-      text-transform: uppercase;
-    }
-
     .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       background: rgba(255, 255, 255, 0.1);
       color: #fff;
       border: none;
       font-size: 2rem;
-      padding: 0.3em 0.6em;
       cursor: pointer;
-      z-index: 10;
       border-radius: 50%;
+      padding: 0.3em 0.6em;
     }
     .arrow:hover {
       background: rgba(255, 165, 0, 0.8);
-    }
-    .arrow-left {
-      left: 5px;
-    }
-    .arrow-right {
-      right: 5px;
     }
 
     footer {
@@ -241,36 +216,24 @@
   </ul>
 </section>
 
-<!-- First Image Slider -->
-<div class="slider-container">
-  <button class="arrow arrow-left" onclick="scrollSlider(1, -1)">‹</button>
-  <div class="slider-wrapper" id="slider1">
-    <div class="slide">
-      <h3>Before</h3>
-      <img src="images/IMG_1443.jpg" alt="Before Headlight Restoration">
-    </div>
-    <div class="slide">
-      <h3>After</h3>
-      <img src="images/IMG_1444.jpg" alt="After Headlight Restoration">
-    </div>
+<!-- First Toggle Image Section -->
+<div class="image-toggle-section">
+  <h3>Before / After</h3>
+  <div class="image-toggle-container">
+    <button class="arrow" onclick="toggleImage('pair1')">‹</button>
+    <img id="pair1" src="images/IMG_1443.jpg" alt="Before Headlight Restoration" />
+    <button class="arrow" onclick="toggleImage('pair1')">›</button>
   </div>
-  <button class="arrow arrow-right" onclick="scrollSlider(1, 1)">›</button>
 </div>
 
-<!-- Second Image Slider -->
-<div class="slider-container">
-  <button class="arrow arrow-left" onclick="scrollSlider(2, -1)">‹</button>
-  <div class="slider-wrapper" id="slider2">
-    <div class="slide">
-      <h3>Before</h3>
-      <img src="images/IMG_3223.jpg" alt="Before Detail">
-    </div>
-    <div class="slide">
-      <h3>After</h3>
-      <img src="images/IMG_3224.jpg" alt="After Detail">
-    </div>
+<!-- Second Toggle Image Section -->
+<div class="image-toggle-section">
+  <h3>Before / After</h3>
+  <div class="image-toggle-container">
+    <button class="arrow" onclick="toggleImage('pair2')">‹</button>
+    <img id="pair2" src="images/IMG_3223.jpg" alt="Before Headlight Restoration 2" />
+    <button class="arrow" onclick="toggleImage('pair2')">›</button>
   </div>
-  <button class="arrow arrow-right" onclick="scrollSlider(2, 1)">›</button>
 </div>
 
 <footer>
@@ -296,13 +259,19 @@
     navList.classList.toggle('show');
   });
 
-  function scrollSlider(num, direction) {
-    const slider = document.getElementById('slider' + num);
-    const slideWidth = slider.offsetWidth;
-    slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+  const images = {
+    pair1: ["images/IMG_1443.jpg", "images/IMG_1444.jpg"],
+    pair2: ["images/IMG_3223.jpg", "images/IMG_3224.jpg"]
+  };
+  const currentIndex = { pair1: 0, pair2: 0 };
+
+  function toggleImage(id) {
+    currentIndex[id] = 1 - currentIndex[id];
+    document.getElementById(id).src = images[id][currentIndex[id]];
   }
 </script>
 
 </body>
 </html>
+
 
