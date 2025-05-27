@@ -240,10 +240,10 @@
   </ul>
 </section>
 
-<!-- Image Slider with Before/After Labels -->
+<!-- First Image Slider -->
 <div class="slider-container">
-  <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
-  <div class="slider-wrapper" id="slider">
+  <button class="arrow arrow-left" onclick="scrollSlider(1, -1)">‹</button>
+  <div class="slider-wrapper" id="slider1">
     <div class="slide">
       <h3>Before</h3>
       <img src="images/IMG_1443.jpg" alt="Before Headlight Restoration">
@@ -253,7 +253,31 @@
       <img src="images/IMG_1444.jpg" alt="After Headlight Restoration">
     </div>
   </div>
-  <button class="arrow arrow-right" onclick="scrollSlider(1)">›</button>
+  <button class="arrow arrow-right" onclick="scrollSlider(1, 1)">›</button>
+</div>
+
+<!-- Second Image Slider -->
+<div class="slider-container">
+  <button class="arrow arrow-left" onclick="scrollSlider(2, -1)">‹</button>
+  <div class="slider-wrapper" id="slider2">
+    <div class="slide">
+      <h3>Before</h3>
+      <img src="images/before2.jpg" alt="Before Detail 2">
+    </div>
+    <div class="slide">
+      <h3>After</h3>
+      <img src="images/after2.jpg" alt="After Detail 2">
+    </div>
+    <div class="slide">
+      <h3>Before</h3>
+      <img src="images/before3.jpg" alt="Before Detail 3">
+    </div>
+    <div class="slide">
+      <h3>After</h3>
+      <img src="images/after3.jpg" alt="After Detail 3">
+    </div>
+  </div>
+  <button class="arrow arrow-right" onclick="scrollSlider(2, 1)">›</button>
 </div>
 
 <footer>
@@ -279,8 +303,8 @@
     navList.classList.toggle('show');
   });
 
-  function scrollSlider(direction) {
-    const slider = document.getElementById('slider');
+  function scrollSlider(num, direction) {
+    const slider = document.getElementById('slider' + num);
     const slideWidth = slider.offsetWidth;
     slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
   }
@@ -288,3 +312,4 @@
 
 </body>
 </html>
+
