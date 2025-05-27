@@ -98,7 +98,8 @@
     .slider-container {
       position: relative;
       max-width: 500px;
-      margin: 2em auto;
+      margin: 3em auto 4em;
+      text-align: center;
     }
 
     .slide-img {
@@ -137,6 +138,12 @@
 
     .arrow:hover {
       background: rgba(255, 165, 0, 0.8);
+    }
+
+    .before-label, .after-label {
+      color: #ffc107;
+      font-weight: 600;
+      margin-top: 0.5em;
     }
 
     footer {
@@ -230,8 +237,14 @@
 
 <div class="slider-container">
   <button class="arrow arrow-left" onclick="toggleSlide(-1)">‹</button>
-  <img src="images/beforeint.png" alt="Before Interior Cleaning" class="slide-img active" id="slide1">
-  <img src="images/afterint.png" alt="After Interior Cleaning" class="slide-img" id="slide2">
+  <div>
+    <img src="images/beforeint.png" alt="Before Interior Cleaning" class="slide-img active" id="slide1">
+    <div class="before-label">Before</div>
+  </div>
+  <div>
+    <img src="images/afterint.png" alt="After Interior Cleaning" class="slide-img" id="slide2">
+    <div class="after-label">After</div>
+  </div>
   <button class="arrow arrow-right" onclick="toggleSlide(1)">›</button>
 </div>
 
@@ -269,3 +282,4 @@
 
 </body>
 </html>
+
