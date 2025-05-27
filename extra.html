@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="utf-8">
   <title>Ceramic Coating - Usagi Detailing</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     body {
@@ -94,20 +94,21 @@
       color: #fff;
       font-size: 0.95rem;
     }
-
     .image-toggle-section {
       margin: 2em auto;
       text-align: center;
+    }
+    .image-toggle-section h3 {
+      margin-bottom: 1em;
+      color: #ffc107;
     }
     .image-toggle-container {
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 0.5em;
-      flex-wrap: nowrap;
       max-width: 95vw;
       margin: 0 auto;
-      overflow: hidden;
     }
     .image-toggle-container img {
       width: 100%;
@@ -115,6 +116,11 @@
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    @media (min-width: 769px) {
+      .image-toggle-container img {
+        max-width: 400px;
+      }
     }
     .arrow {
       background: rgba(255, 255, 255, 0.1);
@@ -128,7 +134,6 @@
     .arrow:hover {
       background: rgba(255, 165, 0, 0.8);
     }
-
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -148,7 +153,6 @@
     footer a:hover {
       text-decoration: underline;
     }
-
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
@@ -215,14 +219,13 @@
 </section>
 
 <div class="image-toggle-section">
-  <h3></h3>
+  <h3>Before / After</h3>
   <div class="image-toggle-container">
-    <button class="arrow" onclick="toggleImage('coating1')">‹</button>
-    <img id="coating1" src="images/IMG_3222.jpg" alt="Before Coating">
-    <button class="arrow" onclick="toggleImage('coating1')">›</button>
+    <button class="arrow" onclick="toggleImage('coating')">‹</button>
+    <img id="coating" src="images/IMG_3222.jpg" alt="Before Ceramic Coating">
+    <button class="arrow" onclick="toggleImage('coating')">›</button>
   </div>
 </div>
-
 
 <footer>
   <section>
@@ -235,8 +238,7 @@
   </section>
   <section>
     <h3>Social</h3>
-    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a> | 
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdz7Xvr4bhATXNfloAhPR_pGgHtW2sBErQPn3hTpXtfxHAyTA/viewform">Google Form</a></p>
+    <p><a href="https://www.instagram.com/usagidetailing/">Instagram</a></p>
   </section>
 </footer>
 
@@ -248,10 +250,9 @@
   });
 
   const images = {
-    coating1: ["images/IMG_3222.jpg", "images/afterengine.png"],
-    coating2: ["images/beforeheadlight.png", "images/afterheadlight.png"]
+    coating: ["images/IMG_3222.jpg", "images/afterengine.png"]
   };
-  const currentIndex = { coating1: 0, coating2: 0 };
+  const currentIndex = { coating: 0 };
 
   function toggleImage(id) {
     currentIndex[id] = 1 - currentIndex[id];
