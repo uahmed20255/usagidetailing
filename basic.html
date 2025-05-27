@@ -95,55 +95,40 @@
       font-size: 0.95rem;
     }
 
-    .slider-container {
-      position: relative;
-      max-width: 500px;
-      margin: 3em auto 4em;
+    .image-toggle-section {
+      margin: 3em auto;
       text-align: center;
     }
-
-    .slide-img {
+    .image-toggle-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    }
+    .image-toggle-container img {
       width: 100%;
+      max-width: 300px;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      display: none;
     }
-
-    .slide-img.active {
-      display: block;
-    }
-
     .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       background: rgba(255, 255, 255, 0.1);
       color: #fff;
       border: none;
-      font-size: 2rem;
-      padding: 0.5em 0.75em;
+      font-size: 1.8rem;
+      padding: 0.3em 0.6em;
       cursor: pointer;
-      z-index: 10;
       border-radius: 50%;
     }
-
-    .arrow-left {
-      left: -20px;
-    }
-
-    .arrow-right {
-      right: -20px;
-    }
-
     .arrow:hover {
       background: rgba(255, 165, 0, 0.8);
     }
-
-    .before-label, .after-label {
+    .label-text {
       color: #ffc107;
-      font-weight: 600;
-      margin-top: 0.5em;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.5em;
     }
 
     footer {
@@ -155,16 +140,13 @@
       background: #0a0a0a;
       color: #ccc;
     }
-
     footer section h3 {
       color: #ffc107;
     }
-
     footer a {
       color: #ffa500;
       text-decoration: none;
     }
-
     footer a:hover {
       text-decoration: underline;
     }
@@ -235,17 +217,14 @@
   </ul>
 </section>
 
-<div class="slider-container">
-  <button class="arrow arrow-left" onclick="toggleSlide(-1)">‹</button>
-  <div>
-    <img src="images/beforeint.png" alt="Before Interior Cleaning" class="slide-img active" id="slide1">
-    <div class="before-label">Before</div>
+<!-- Image Toggle Section -->
+<div class="image-toggle-section">
+  <div class="label-text" id="toggle-label">Before</div>
+  <div class="image-toggle-container">
+    <button class="arrow" onclick="toggleImage()">‹</button>
+    <img id="toggle-img" src="images/beforeint.png" alt="Before Interior Cleaning">
+    <button class="arrow" onclick="toggleImage()">›</button>
   </div>
-  <div>
-    <img src="images/afterint.png" alt="After Interior Cleaning" class="slide-img" id="slide2">
-    <div class="after-label">After</div>
-  </div>
-  <button class="arrow arrow-right" onclick="toggleSlide(1)">›</button>
 </div>
 
 <footer>
@@ -270,13 +249,14 @@
     navList.classList.toggle('show');
   });
 
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slide-img');
+  const images = ["images/beforeint.png", "images/afterint.png"];
+  const labels = ["Before", "After"];
+  let currentIndex = 0;
 
-  function toggleSlide(direction) {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + direction + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
+  function toggleImage() {
+    currentIndex = 1 - currentIndex;
+    document.getElementById('toggle-img').src = images[currentIndex];
+    document.getElementById('toggle-label').innerText = labels[currentIndex];
   }
 </script>
 
