@@ -113,10 +113,15 @@
     }
     .image-toggle-container img {
       width: 100%;
-      max-width: 400px;
+      max-width: 300px;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    @media (min-width: 769px) {
+      .image-toggle-container img {
+        max-width: 400px;
+      }
     }
     .arrow {
       background: rgba(255, 255, 255, 0.1);
@@ -168,7 +173,9 @@
       .menu-toggle {
         display: block;
       }
-      .service-details ul { grid-template-columns: 1fr; }
+      .service-details ul {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -219,28 +226,12 @@
   </ul>
 </section>
 
-<!-- Toggle Image Viewers -->
 <div class="image-toggle-section">
+  <h3>Before / After</h3>
   <div class="image-toggle-container">
-    <button class="arrow" onclick="toggleImage('full1')">‹</button>
-    <img id="full1" src="images/IMG_1356.jpg" alt="Before Full Cleaning">
-    <button class="arrow" onclick="toggleImage('full1')">›</button>
-  </div>
-</div>
-
-<div class="image-toggle-section">
-  <div class="image-toggle-container">
-    <button class="arrow" onclick="toggleImage('full2')">‹</button>
-    <img id="full2" src="images/IMG_1445.jpg" alt="After Full Cleaning">
-    <button class="arrow" onclick="toggleImage('full2')">›</button>
-  </div>
-</div>
-
-<div class="image-toggle-section">
-  <div class="image-toggle-container">
-    <button class="arrow" onclick="toggleImage('full3')">‹</button>
-    <img id="full3" src="images/afterint.png" alt="Interior Finish">
-    <button class="arrow" onclick="toggleImage('full3')">›</button>
+    <button class="arrow" onclick="toggleImage('fullToggle')">‹</button>
+    <img id="fullToggle" src="images/IMG_1356.jpg" alt="Full Detailing Result">
+    <button class="arrow" onclick="toggleImage('fullToggle')">›</button>
   </div>
 </div>
 
@@ -267,18 +258,19 @@
   });
 
   const images = {
-    full1: ["images/IMG_1356.jpg", "images/IMG_1356.jpg"],
-    full2: ["images/IMG_1445.jpg", "images/IMG_1445.jpg"],
-    full3: ["images/afterint.png", "images/afterint.png"]
+    fullToggle: [
+      "images/IMG_1356.jpg",
+      "images/IMG_1445.jpg",
+      "images/afterint.png"
+    ]
   };
-  const currentIndex = { full1: 0, full2: 0, full3: 0 };
+  const currentIndex = { fullToggle: 0 };
 
   function toggleImage(id) {
-    currentIndex[id] = 1 - currentIndex[id];
+    currentIndex[id] = (currentIndex[id] + 1) % images[id].length;
     document.getElementById(id).src = images[id][currentIndex[id]];
   }
 </script>
 
 </body>
 </html>
-
