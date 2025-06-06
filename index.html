@@ -6,12 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    * {
+      --highlight-color: red;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
       background: radial-gradient(circle at center, #0a0a0a 0%, #1a1a1a 100%);
       color: #fff;
     }
+
     header {
       display: flex;
       justify-content: space-between;
@@ -22,10 +27,12 @@
       top: 0;
       z-index: 1000;
     }
+
     .logo img {
       height: 50px;
       border-radius: 50%;
     }
+
     nav ul {
       list-style: none;
       display: flex;
@@ -33,44 +40,52 @@
       margin: 0;
       padding: 0;
     }
+
     nav ul li a {
       color: #fff;
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
     }
+
     nav ul li a:hover {
-      color: #ffa500;
+      color: var(--highlight-color);
     }
+
     .menu-toggle {
       display: none;
       font-size: 1.8rem;
       cursor: pointer;
       color: #fff;
     }
+
     .intro {
       text-align: center;
       padding: 4em 1em;
     }
+
     .intro h1 {
       font-size: 3rem;
       margin: 0;
       line-height: 1.2;
     }
+
     .intro .highlight {
       display: block;
-      color: #ffc107;
+      color: var(--highlight-color);
       letter-spacing: 2px;
       font-weight: 500;
       font-size: 1.2rem;
       margin-top: 0.5em;
     }
+
     .intro p {
       font-style: italic;
       color: #ccc;
       margin: 1em 0 2em;
       font-size: 1.1rem;
     }
+
     .button {
       background: #000;
       color: #fff;
@@ -83,6 +98,7 @@
       transition: all 0.3s ease;
       display: inline-block;
     }
+
     .button:hover {
       background: red;
       color: #fff;
@@ -98,6 +114,11 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.5);
       text-align: center;
     }
+
+    .who-are-we h2 {
+      color: var(--highlight-color);
+    }
+
     .who-are-we img {
       width: 100%;
       max-width: 600px;
@@ -114,6 +135,7 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .card {
       background: #fff;
       color: #000;
@@ -122,15 +144,19 @@
       text-align: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
+
     .card img {
       width: 100%;
       height: auto;
     }
+
     .card h3 {
       margin: 1em 0 0.5em;
       font-size: 1.3rem;
       font-weight: 700;
+      color: var(--highlight-color);
     }
+
     .card p {
       padding: 0 1em 1em;
       font-size: 1.05rem;
@@ -139,6 +165,7 @@
       line-height: 1.6;
       font-family: 'Segoe UI', sans-serif;
     }
+
     .card .button {
       margin-bottom: 1em;
       display: inline-block;
@@ -155,9 +182,11 @@
         display: none;
         border-radius: 0 0 0 10px;
       }
+
       nav ul.show {
         display: flex;
       }
+
       .menu-toggle {
         display: block;
       }
