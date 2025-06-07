@@ -3,7 +3,7 @@
 <head>
   <title>Premium Package - Usagi Detailing</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     :root {
       --highlight-color: red;
@@ -22,6 +22,7 @@
       align-items: center;
       padding: 1em 2em;
       background: rgba(0, 0, 0, 0.7);
+      flex-wrap: wrap;
     }
 
     .logo img {
@@ -32,9 +33,10 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1.5em;
+      gap: 1em;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
     }
 
     nav ul li a {
@@ -88,7 +90,7 @@
     }
 
     .intro h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin: 0;
     }
 
@@ -115,6 +117,7 @@
 
     .content h2 {
       color: var(--highlight-color);
+      font-size: 1.8rem;
     }
 
     .content ul {
@@ -128,6 +131,7 @@
       padding: 1em;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      font-size: 1rem;
     }
 
     .learn-button {
@@ -140,6 +144,7 @@
       text-decoration: none;
       border-radius: 5px;
       transition: 0.3s ease;
+      font-size: 0.95rem;
     }
 
     .learn-button:hover {
@@ -150,18 +155,20 @@
     .image-toggle-section {
       margin: 3em auto;
       text-align: center;
+      padding: 0 1em;
     }
 
     .image-toggle-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1em;
+      gap: 0.5em;
+      flex-wrap: wrap;
     }
 
     .image-toggle-container img {
       width: 100%;
-      max-width: 400px;
+      max-width: 360px;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -171,7 +178,7 @@
       background: rgba(255, 255, 255, 0.1);
       color: #fff;
       border: none;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       padding: 0.3em 0.6em;
       cursor: pointer;
       border-radius: 50%;
@@ -184,7 +191,7 @@
     .label-text {
       color: var(--highlight-color);
       font-weight: bold;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 0.5em;
     }
 
@@ -261,9 +268,8 @@
   </ul>
 </div>
 
-<!-- Image Toggle Section -->
 <div class="image-toggle-section">
-  <div class="label-text" id="toggle-label"></div>
+  <div class="label-text" id="toggle-label">Before</div>
   <div class="image-toggle-container">
     <button class="arrow" onclick="toggleImage()">‹</button>
     <img id="toggle-img" src="images/aftertire.png" alt="Before Image">
@@ -293,7 +299,7 @@
   }
 
   const images = ["images/aftertire.png", "images/afterint.png", "images/IMG_1437.jpg"];
-
+  const labels = ["Before", "Interior", "Engine"];
   let currentIndex = 0;
 
   function toggleImage() {
@@ -305,3 +311,4 @@
 
 </body>
 </html>
+
