@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <style>
-    * {
+    :root {
       --highlight-color: red;
     }
 
@@ -72,11 +72,9 @@
         border-radius: 8px;
         padding: 1em;
       }
-
       nav ul.active {
         display: flex;
       }
-
       .menu-toggle {
         display: flex;
       }
@@ -109,6 +107,7 @@
 
     .content h2 {
       color: var(--highlight-color);
+      margin-top: 1.5em;
     }
 
     .content ul {
@@ -124,67 +123,32 @@
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     }
 
-    .learn-button {
-      display: inline-block;
-      margin-top: 10px;
-      background: transparent;
-      border: 2px solid #ccc;
-      color: #fff;
-      padding: 0.5em 1em;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: 0.3s ease;
-    }
-
-    .learn-button:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    .slider-container {
-      position: relative;
-      max-width: 600px;
-      margin: 3em auto;
-      overflow: hidden;
-    }
-
-    .slider-wrapper {
-      display: flex;
-      transition: transform 0.4s ease-in-out;
-      scroll-behavior: smooth;
-      scroll-snap-type: x mandatory;
-      overflow-x: auto;
-    }
-
-    .slider-wrapper::-webkit-scrollbar {
-      display: none;
-    }
-
-    .slide {
-      flex: 0 0 100%;
-      scroll-snap-align: center;
+    .image-toggle-section {
       text-align: center;
+      margin: 3em auto;
     }
 
-    .slide img {
-      width: 500px;
-      height: 300px;
-      object-fit: cover;
+    .image-toggle-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .image-toggle-container img {
+      width: 100%;
+      max-width: 400px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
     .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
       background: rgba(255, 255, 255, 0.1);
       color: #fff;
       border: none;
       font-size: 2rem;
-      padding: 0.5em 0.75em;
+      padding: 0.3em 0.6em;
       cursor: pointer;
-      z-index: 10;
       border-radius: 50%;
     }
 
@@ -192,12 +156,11 @@
       background: var(--highlight-color);
     }
 
-    .arrow-left {
-      left: 10px;
-    }
-
-    .arrow-right {
-      right: 10px;
+    .label-text {
+      color: var(--highlight-color);
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 0.5em;
     }
 
     footer {
@@ -229,9 +192,7 @@
 <header>
   <a href="index.html" class="logo"><img src="images/pic01.jpg" alt="Usagi Detailing Logo"></a>
   <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
+    <div></div><div></div><div></div>
   </div>
   <nav>
     <ul id="menu">
@@ -254,18 +215,18 @@
 
 <div class="content">
   <h2>Premium Detailing Package</h2>
-  <p>Our Premium Detailing Package is the most comprehensive service we offer, including everything from the Full Package, plus advanced treatments for restoring and protecting your vehicle.</p>
+  <p>This service includes everything from the Full Package, plus extra protection and deep care for your vehicle’s surfaces and interior.</p>
 
   <h2>What’s Included:</h2>
   <ul>
-    <li><strong>Exterior Wash & Dry:</strong> Hand wash and dry. <a href="light.html" class="learn-button">Learn About Paint Correction</a></li>
-    <li><strong>Ceramic Coating:</strong> Long-lasting shine and protection. <a href="extra.html" class="learn-button">Learn About Ceramic Coating</a></li>
-    <li><strong>Interior Steam Cleaning:</strong> Deep clean upholstery and carpets.</li>
-    <li><strong>Leather & Fabric Treatment:</strong> Condition and protect seats.</li>
-    <li><strong>Pet Hair Removal:</strong> Remove pet hair from all surfaces.</li>
-    <li><strong>Plastic Shine Treatment:</strong> Restore shine to plastic parts.</li>
-    <li><strong>Window & Mirror Cleaning:</strong> Streak-free finish.</li>
-    <li><strong>Air Freshener:</strong> Choose your scent.</li>
+    <li><strong>Exterior Wash & Dry:</strong> Full hand wash and dry.</li>
+    <li><strong>Ceramic Coating:</strong> Long-lasting shine and paint protection.</li>
+    <li><strong>Interior Steam Cleaning:</strong> Deep cleanse of upholstery and carpets.</li>
+    <li><strong>Leather & Fabric Treatment:</strong> Restores and protects all seats.</li>
+    <li><strong>Pet Hair Removal:</strong> Thorough removal from all surfaces.</li>
+    <li><strong>Plastic Shine Treatment:</strong> Restores shine to plastics and trims.</li>
+    <li><strong>Window & Mirror Cleaning:</strong> Streak-free glass finish.</li>
+    <li><strong>Air Freshener:</strong> Custom scent of your choice.</li>
   </ul>
 
   <h2>Starting Prices:</h2>
@@ -275,14 +236,14 @@
   </ul>
 </div>
 
-<div class="slider-container">
-  <button class="arrow arrow-left" onclick="scrollSlider(-1)">‹</button>
-  <div class="slider-wrapper" id="slider">
-    <div class="slide"><img src="images/aftertire.png" alt="Tire Finish"></div>
-    <div class="slide"><img src="images/afterint.png" alt="Clean Interior"></div>
-    <div class="slide"><img src="images/IMG_1437.jpg" alt="Engine Bay"></div>
+<!-- Image Toggle Section -->
+<div class="image-toggle-section">
+  <div class="label-text" id="toggle-label">Before</div>
+  <div class="image-toggle-container">
+    <button class="arrow" onclick="toggleImage()">‹</button>
+    <img id="toggle-img" src="images/beforeint.png" alt="Before Interior">
+    <button class="arrow" onclick="toggleImage()">›</button>
   </div>
-  <button class="arrow arrow-right" onclick="scrollSlider(1)">›</button>
 </div>
 
 <footer>
@@ -306,11 +267,14 @@
     menu.classList.toggle('active');
   }
 
-  function scrollSlider(direction) {
-    const slider = document.getElementById('slider');
-    const slide = slider.querySelector('.slide');
-    const slideWidth = slide.offsetWidth;
-    slider.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+  const images = ["images/beforeint.png", "images/afterint.png"];
+  const labels = ["Before", "After"];
+  let currentIndex = 0;
+
+  function toggleImage() {
+    currentIndex = 1 - currentIndex;
+    document.getElementById('toggle-img').src = images[currentIndex];
+    document.getElementById('toggle-label').innerText = labels[currentIndex];
   }
 </script>
 
