@@ -3,9 +3,9 @@
 <head>
   <title>Premium Package - Usagi Detailing</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <style>
-    :root {
+    * {
       --highlight-color: red;
     }
 
@@ -22,7 +22,6 @@
       align-items: center;
       padding: 1em 2em;
       background: rgba(0, 0, 0, 0.7);
-      flex-wrap: wrap;
     }
 
     .logo img {
@@ -33,10 +32,9 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: 1em;
+      gap: 1.5em;
       padding: 0;
       margin: 0;
-      flex-wrap: wrap;
     }
 
     nav ul li a {
@@ -90,7 +88,7 @@
     }
 
     .intro h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin: 0;
     }
 
@@ -98,12 +96,6 @@
       color: var(--highlight-color);
       letter-spacing: 2px;
       font-weight: 600;
-    }
-
-    .intro p {
-      font-style: italic;
-      color: #ccc;
-      margin-top: 1em;
     }
 
     .content {
@@ -117,7 +109,6 @@
 
     .content h2 {
       color: var(--highlight-color);
-      font-size: 1.8rem;
     }
 
     .content ul {
@@ -131,7 +122,6 @@
       padding: 1em;
       border-radius: 10px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      font-size: 1rem;
     }
 
     .learn-button {
@@ -144,7 +134,6 @@
       text-decoration: none;
       border-radius: 5px;
       transition: 0.3s ease;
-      font-size: 0.95rem;
     }
 
     .learn-button:hover {
@@ -160,15 +149,15 @@
 
     .image-toggle-container {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 0.5em;
-      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      flex-wrap: nowrap;
     }
 
     .image-toggle-container img {
       width: 100%;
-      max-width: 360px;
+      max-width: 300px;
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
@@ -178,10 +167,11 @@
       background: rgba(255, 255, 255, 0.1);
       color: #fff;
       border: none;
-      font-size: 1.6rem;
-      padding: 0.3em 0.6em;
+      font-size: 2rem;
+      padding: 0.3em 0.5em;
       cursor: pointer;
       border-radius: 50%;
+      flex-shrink: 0;
     }
 
     .arrow:hover {
@@ -191,8 +181,21 @@
     .label-text {
       color: var(--highlight-color);
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 0.5em;
+    }
+
+    @media (max-width: 500px) {
+      .arrow {
+        font-size: 1.5rem;
+        padding: 0.2em 0.4em;
+      }
+      .image-toggle-container {
+        gap: 0.5em;
+      }
+      .label-text {
+        font-size: 1rem;
+      }
     }
 
     footer {
@@ -224,7 +227,9 @@
 <header>
   <a href="index.html" class="logo"><img src="images/pic01.jpg" alt="Usagi Detailing Logo"></a>
   <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
   <nav>
     <ul id="menu">
@@ -299,7 +304,7 @@
   }
 
   const images = ["images/aftertire.png", "images/afterint.png", "images/IMG_1437.jpg"];
-  const labels = ["Before", "Interior", "Engine"];
+  const labels = ["Before", "After", "Final"];
   let currentIndex = 0;
 
   function toggleImage() {
